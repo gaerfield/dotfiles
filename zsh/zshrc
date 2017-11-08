@@ -17,27 +17,17 @@ if ! zplug check; then
 fi
 
 # use --verbose to list loaded plugins
-zplug load --verbose
+zplug load #--verbose
 
-# theme-config
+# powerlevel9k-Konfiguration
 source $DOTFILE_REPO/zsh/theme.zsh
-# keybindings
+# Wort vor- und zurück springen
 source $DOTFILE_REPO/zsh/keybindings.zsh
-# fzf
+# Alias
+source $DOTFILE_REPO/zsh/alias.zsh
+# Auto-Completion
+source $DOTFILE_REPO/zsh/completions.zsh
+# History-Einstellungen etc.
+source $DOTFILE_REPO/zsh/options.zsh
+# fuzzy-search/completions etc.
 source $DOTFILE_REPO/zsh/fzf.zsh
-
-# Completions
-# stolen from: https://github.com/Shougo/shougo-s-github/blob/64d1ff893c12439bb0bfdd30b7e48519f8b5711b/.zshrc
-
-# Enable completions
-
-
-# check zsh-options
-# for example: https://github.com/Shougo/shougo-s-github/blob/64d1ff893c12439bb0bfdd30b7e48519f8b5711b/.zshrc
-
-# Share zsh histories
-export HISTFILE=~/.zsh_history
-export HISTSIZE=10000
-export SAVEHIST=10000
-setopt inc_append_history
-setopt share_history

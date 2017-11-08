@@ -11,7 +11,7 @@ zplug "junegunn/fzf-bin", \
     from:gh-r, \
     as:command, \
     rename-to:"fzf"
-zplug "changyuheng/zsh-interactive-cd"
+#zplug "changyuheng/zsh-interactive-cd"
 
 # Set the priority when loading
 # e.g., zsh-syntax-highlighting must be loaded

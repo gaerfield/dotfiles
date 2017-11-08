@@ -24,7 +24,7 @@ source "$FZF_REPO/shell/key-bindings.zsh"
 
 # TAB-Completion
 # --------------
-source "$ZPLUG_REPO/repos/changyuheng/zsh-interactive-cd/zsh-interactive-cd.plugin.zsh"
+#source "$ZPLUG_REPO/repos/changyuheng/zsh-interactive-cd/zsh-interactive-cd.plugin.zsh"
 
 export FZF_DEFAULT_OPTS='
   --color fg:-1,bg:-1,hl:33,fg+:254,bg+:235,hl+:33
