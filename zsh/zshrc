@@ -2,25 +2,29 @@
 # User configuration sourced by interactive shells
 #
 export TERM="xterm-256color"
+export DOTFILE_REPO="$HOME/.dotfiles"
+export ZPLUG_REPO="$HOME/.zplug"
 
 source ~/.fonts/*.sh
 
 # zplug
-export ZPLUG_LOADFILE="${ZDOTDIR:-$HOME}/.dotfiles/zsh/packages.zsh"
-source ~/.zplug/init.zsh
+
+export ZPLUG_LOADFILE="$DOTFILE_REPO/zsh/packages.zsh"
+source $ZPLUG_REPO/init.zsh
 
 if ! zplug check; then
     zplug install
 fi
 
 # use --verbose to list loaded plugins
-zplug load
+zplug load --verbose
 
 # theme-config
-source ~/.dotfiles/zsh/theme.zsh
+source $DOTFILE_REPO/zsh/theme.zsh
 # keybindings
-source ~/.dotfiles/zsh/keybindings.zsh
-
+source $DOTFILE_REPO/zsh/keybindings.zsh
+# fzf
+source $DOTFILE_REPO/zsh/fzf.zsh
 
 # Completions
 # stolen from: https://github.com/Shougo/shougo-s-github/blob/64d1ff893c12439bb0bfdd30b7e48519f8b5711b/.zshrc
@@ -37,6 +41,3 @@ export HISTSIZE=10000
 export SAVEHIST=10000
 setopt inc_append_history
 setopt share_history
-
-# bringt das was?
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
