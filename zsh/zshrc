@@ -5,7 +5,7 @@ export TERM="xterm-256color"
 export DOTFILE_REPO="$HOME/.dotfiles"
 export ZPLUG_REPO="$HOME/.zplug"
 
-source ~/.fonts/*.sh
+#source ~/.fonts/*.sh
 
 # zplug
 
@@ -31,3 +31,8 @@ source $DOTFILE_REPO/zsh/completions.zsh
 source $DOTFILE_REPO/zsh/options.zsh
 # fuzzy-search/completions etc.
 source $DOTFILE_REPO/zsh/fzf.zsh
+
+if [[ -s "$HOME/.zlocal" ]]; then
+  source "$HOME/.zlocal"
+fi
+
