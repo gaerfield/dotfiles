@@ -10,3 +10,8 @@ dot dot dot
 * C-R: search-command history
 * C-T: search for file or folder adding to command-line
 * A-C: change into directory in subtree
+
+# Windows Subsystem for Linux
+## wsltty
+* install mintty-shell for wsl: https://github.com/mintty/wsltty
+* cp [./dotfiles/wsltty](wsltty-config) to %APPDATA%/wsltty/config
