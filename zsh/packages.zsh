@@ -22,6 +22,8 @@ zplug "plugins/docker-compose", from:oh-my-zsh
 #zplug "plugins/docker-machine", from:oh-my-zsh
 
 zplug "plugins/gradle", from:oh-my-zsh
+zplug "plugins/pass", from:oh-my-zsh
+#zplug "zx2c4/password-store", use:"src/completion/pass.zsh-completion"
 
 # Set the priority when loading
 # e.g., zsh-syntax-highlighting must be loaded
