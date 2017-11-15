@@ -23,6 +23,7 @@ zplug "plugins/docker-compose", from:oh-my-zsh
 
 zplug "plugins/gradle", from:oh-my-zsh
 zplug "plugins/pass", from:oh-my-zsh
+zplug "plugins/extract", from:oh-my-zsh
 #zplug "zx2c4/password-store", use:"src/completion/pass.zsh-completion"
 
 # Set the priority when loading
