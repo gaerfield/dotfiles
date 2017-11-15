@@ -11,7 +11,17 @@ zplug "junegunn/fzf-bin", \
     from:gh-r, \
     as:command, \
     rename-to:"fzf"
-#zplug "changyuheng/zsh-interactive-cd"
+zplug "plugins/gpg-agent", \
+    from:oh-my-zsh
+
+# don't checkout 32M of docker-repos, use oh-my-zsh plugins instead
+#zplug "docker/compose", depth:1, use:contrib/completion/zsh
+#zplug "docker/cli", depth:1, use:contrib/completion/zsh
+zplug "plugins/docker", from:oh-my-zsh
+zplug "plugins/docker-compose", from:oh-my-zsh
+#zplug "plugins/docker-machine", from:oh-my-zsh
+
+zplug "plugins/gradle", from:oh-my-zsh
 
 # Set the priority when loading
 # e.g., zsh-syntax-highlighting must be loaded

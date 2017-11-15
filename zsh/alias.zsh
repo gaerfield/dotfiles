@@ -13,6 +13,8 @@ alias duf='du -sh *'
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 
+alias gpg='gpg2'
+
 alias update='sudo apt-get update && sudo apt-get upgrade -y && sudo aptitude dist-upgrade -y && sudo apt-get autoremove -y'
 alias port='netstat -tulpn | grep'
 
