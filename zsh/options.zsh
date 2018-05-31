@@ -30,3 +30,4 @@ setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history
 # Weitere Optionen
 setopt no_beep
 setopt EXTENDED_GLOB
+setopt interactivecomments       # interactive commands
