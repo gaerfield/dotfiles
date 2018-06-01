@@ -42,4 +42,5 @@ zplug "plugins/extract", from:oh-my-zsh
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 # IDE-like completion from history
-zplug "tarruda/zsh-autosuggestions", use:"dist/autosuggestions.zsh"
+zplug "tarruda/zsh-autosuggestions", use:"zsh-autosuggestions.zsh"
+

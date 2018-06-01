@@ -31,6 +31,8 @@ source $DOTFILE_REPO/zsh/completions.zsh
 source $DOTFILE_REPO/zsh/options.zsh
 # fuzzy-search/completions etc.
 source $DOTFILE_REPO/zsh/fzf.zsh
+# autosuggestions
+source $DOTFILE_REPO/zsh/autosuggestions.zsh
 
 if [[ -s "$HOME/.zlocal" ]]; then
   source "$HOME/.zlocal"
