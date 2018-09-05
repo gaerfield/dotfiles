@@ -13,7 +13,7 @@ init_submodules() {
   yadm submodule update --recursive --init
 }
 
-upate_yadm_url(){
+update_yadm_url(){
   log "Updating the yadm repo origin URL"
   yadm remote set-url origin "git@github.com:gaerfield/dotfiles.git"
 }
