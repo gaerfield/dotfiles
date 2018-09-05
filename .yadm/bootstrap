@@ -1,0 +1,32 @@
+#!/bin/sh
+
+log() {
+  yellow="\e[0;33m"
+  magenta="\e[0;35m"
+  red="\e[0;31m"
+  reset="\e[0;0m"
+  printf "$magenta>$red>$yellow>$reset %s\n" "$*" 1>&2
+}
+
+init_submodules() {
+  log "init submodules"
+  yadm submodule update --recursive --init
+}
+
+upate_yadm_url(){
+  log "Updating the yadm repo origin URL"
+  yadm remote set-url origin "git@github.com:gaerfield/dotfiles.git"
+}
+
+setup_zsh() {
+  log "setting Zsh as login shell"
+  zsh=$(which zsh)
+  sudo chsh -s "$zsh" $USER
+}
+
+cd "$HOME"
+
+init_submodules
+update_yadm_url
+setup_zsh
+
