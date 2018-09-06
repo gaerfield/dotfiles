@@ -57,3 +57,8 @@
   description = "Dateien finden"
   command = "locate java"
   output = ""
+
+[[snippets]]
+  description = "Bitwarden: Auto-Fill, Open Popup, Open Sidebar"
+  command = "ctrl-shift-l ctrl-shift-u alt-shift-u"
+  output = ""
