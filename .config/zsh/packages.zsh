@@ -55,6 +55,12 @@ zplug "monochromegane/the_platinum_searcher", \
 zplug "knqyf263/pet", \
     from:gh-r, \
     use:"*linux*64*tar*", \
-    as:command, \
-    hook-build: ''
+    as:command
 zplug "knqyf263/pet", defer:2, use:"misc/completions/zsh"
+
+# lnav logfile viewer
+zplug "tstack/lnav", \
+    from:gh-r, \
+    use:"*linux*64*", \
+    as:command
+
