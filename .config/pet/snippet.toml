@@ -1,0 +1,59 @@
+[[snippets]]
+  description = "Log-Dateien in kleinere Logs zu je 1.000.000 Zeilen aufsplitten (pro Datei ca. ~140 MB)"
+  command = "split -l 1000000 myFatLog.log"
+  output = ""
+
+[[snippets]]
+  description = "entferne Zeilen aus dem file und printe sie nach stdout"
+  command = "sed '/pattern to match/d' ./infile"
+  output = ""
+
+[[snippets]]
+  description = "entferne Zeilen direkt im File"
+  command = "sed -i '/pattern to match/d' ./infile"
+  output = ""
+
+[[snippets]]
+  description = "entferne Zeilen direkt im File aber erzeuge backup"
+  command = "sed -i.bak '/pattern to match/d' ./infile"
+  output = ""
+
+[[snippets]]
+  description = "rekursiv alle matches in den Files anzeigen (-rw nur das ganze Wort matchen)"
+  command = "grep -r wordToFind /folder/to/search"
+  output = ""
+
+[[snippets]]
+  description = "alle Log-Dateien die nicht älter als ein Tag sind"
+  command = "find /directory_path -mtime -1 -ls | grep log$"
+  output = ""
+
+[[snippets]]
+  description = "alle Log-Dateien die nicht älter als ein Tag sind (2)"
+  command = "find /directory_path -name \"*log\" -mtime -2 -ls"
+  output = ""
+
+[[snippets]]
+  description = "javas default options mit grep auf -Xmx Option"
+  command = "java -XX:+PrintFlagsFinal -version | grep MaxHeapSize"
+  output = ""
+
+[[snippets]]
+  description = "Nutzer einer Gruppe hinzufügen"
+  command = "usermod -a -G examplegroup exampleusername"
+  output = ""
+
+[[snippets]]
+  description = "frei Speicher"
+  command = "free -h"
+  output = ""
+
+[[snippets]]
+  description = "binarys finden"
+  command = "whereis file"
+  output = ""
+
+[[snippets]]
+  description = "Dateien finden"
+  command = "locate java"
+  output = ""
