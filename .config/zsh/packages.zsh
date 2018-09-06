@@ -19,7 +19,6 @@ zplug "junegunn/fzf-bin", \
 #    use:"*64*linux*", \
 #    hook-build:"ls"
 
-# 
 zplug "zsh-users/zsh-completions"
 
 # yubikey uses gpg-agent
@@ -53,4 +52,9 @@ zplug "monochromegane/the_platinum_searcher", \
 
 # console-snippet-manager - go need 218MB - dpkg-package is available
 # zplug 'knqyf263/pet', as:command, hook-build:'go get -d && go build'
-
+zplug "knqyf263/pet", \
+    from:gh-r, \
+    use:"*linux*64*tar*", \
+    as:command, \
+    hook-build: ''
+zplug "knqyf263/pet", defer:2, use:"misc/completions/zsh"
