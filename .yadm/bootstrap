@@ -13,21 +13,27 @@ init_submodules() {
   yadm submodule update --recursive --init
 }
 
-update_yadm_url(){
-  log "Updating the yadm repo origin URL"
-  yadm remote set-url origin "git@github.com:gaerfield/dotfiles.git"
-}
-
 setup_zsh() {
   log "setting Zsh as login shell"
   zsh=$(which zsh)
   sudo chsh -s "$zsh" $USER
 }
 
+setup_vim() {
+  # make sure, vim is installed
+  sudo apt install vim
+  vim +silent +PluginInstall +qall
+}
+
+# optional: not every machine is allowed to commit
+update_yadm_url(){
+  log "Updating the yadm repo origin URL"
+  yadm remote set-url origin "git@github.com:gaerfield/dotfiles.git"
+}
+
 cd "$HOME"
 
 init_submodules
-update_yadm_url
 setup_zsh
-install_pet
+setup_vim
 
