@@ -16,6 +16,8 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
 " Fuzzy finder 
 Plugin 'junegunn/fzf'
+" solarized colors
+Plugin 'altercation/vim-colors-solarized'
 
 
 
