@@ -62,3 +62,8 @@
   description = "Bitwarden: Auto-Fill, Open Popup, Open Sidebar"
   command = "ctrl-shift-l ctrl-shift-u alt-shift-u"
   output = ""
+
+[[snippets]]
+  description = "view Logfiles"
+  command = "lnav"
+  output = ""
