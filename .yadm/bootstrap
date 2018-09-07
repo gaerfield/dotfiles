@@ -24,15 +24,6 @@ setup_zsh() {
   sudo chsh -s "$zsh" $USER
 }
 
-install_pet() {
-  log "installing pet console snippet-manager"
-  url='https://github.com/knqyf263/pet/releases/download/v0.3.2/pet_0.3.2_linux_amd64.deb'
-  TEMP_DEB=$(mktemp)
-  curl -o $TEMP_DEB -L $url
-  sudo dpkg -i $TEMP_DEB
-  rm -f $TEMP_DEB
-}
-
 cd "$HOME"
 
 init_submodules
