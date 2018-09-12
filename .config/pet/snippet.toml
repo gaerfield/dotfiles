@@ -67,3 +67,13 @@
   description = "view Logfiles"
   command = "lnav"
   output = ""
+
+[[snippets]]
+  description = "current public ip through curl"
+  command = "curl ifconfig.me"
+  output = ""
+
+[[snippets]]
+  description = "current public ip through dig"
+  command = "dig +short myip.opendns.com @resolver1.opendns.com"
+  output = ""
