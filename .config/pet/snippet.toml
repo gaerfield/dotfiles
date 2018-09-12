@@ -77,3 +77,8 @@
   description = "current public ip through dig"
   command = "dig +short myip.opendns.com @resolver1.opendns.com"
   output = ""
+
+[[snippets]]
+  description = "tail -f Alternative"
+  command = "less +F file"
+  output = ""
