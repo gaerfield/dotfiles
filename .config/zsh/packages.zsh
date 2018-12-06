@@ -31,6 +31,9 @@ zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/docker-compose", from:oh-my-zsh
 #zplug "plugins/docker-machine", from:oh-my-zsh
 
+#aws
+zplug "plugins/aws", from:oh-my-zsh
+
 zplug "plugins/gradle", from:oh-my-zsh
 zplug "plugins/extract", from:oh-my-zsh
 
@@ -47,8 +50,8 @@ zplug "tarruda/zsh-autosuggestions", use:"zsh-autosuggestions.zsh"
 zplug "monochromegane/the_platinum_searcher", \
     as:command, \
     from:gh-r, \
-    rename-to:"pt", \
-    frozen:1
+    rename-to:"pt"
+    # frozen:1
 
 # console-snippet-manager - go need 218MB - dpkg-package is available
 # zplug 'knqyf263/pet', as:command, hook-build:'go get -d && go build'

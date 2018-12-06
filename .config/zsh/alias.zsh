@@ -18,6 +18,8 @@ alias gpg='gpg2'
 alias update='sudo apt-get update && sudo apt-get upgrade -y && sudo aptitude dist-upgrade -y && sudo apt-get autoremove -y'
 alias port='netstat -tulpn | grep'
 
+alias python='python3'
+
 # Functions
 # Find in all files pattern $1
 fif() { ff * -exec grep -nHr "$1" {} \; ; }

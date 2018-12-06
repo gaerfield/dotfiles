@@ -1,3 +1,5 @@
 [user]
 	name = gaerfield@posteo.net
 	email = gaerfield@posteo.net
+[http]
+	postBuffer = 1157286400

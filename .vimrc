@@ -49,6 +49,7 @@ set wildmode=list:longest,full  " Shows all possible files/commands/... in a lis
 set t_Co=256                    " Colors to 256, for TODO
 colorscheme solarized           " Use solarized as color scheme !Download theme to ~/.vim/colors/solarized.vim
 set background=light            " Use light mode of colorscheme
+set clipboard=unnamedplus       " Nutze den STRG+C/STRG+V - copy-paste-buffer
 
 " Display
 set laststatus=2     " Always show status line

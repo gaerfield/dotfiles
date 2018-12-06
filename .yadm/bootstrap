@@ -19,9 +19,16 @@ setup_zsh() {
   sudo chsh -s "$zsh" $USER
 }
 
+install_packages() {
+   sudo apt install xclip
+   # sdkman
+   curl -s "https://get.sdkman.io" | bash && source "$HOME/.sdkman/bin/sdkman-init.sh"
+   sdk install kotlin kscript
+}
+
 setup_vim() {
   # make sure, vim is installed
-  sudo apt install vim
+  sudo apt install libxml2-utils vim vim-gtk
   vim +silent +PluginInstall +qall
 }
 
@@ -35,5 +42,6 @@ cd "$HOME"
 
 init_submodules
 setup_zsh
+install_packages
 setup_vim
 
