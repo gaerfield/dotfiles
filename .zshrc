@@ -38,3 +38,7 @@ if [[ -s "$HOME/.zlocal" ]]; then
   source "$HOME/.zlocal"
 fi
 
+ if [[ -s "$HOME/.dir_colors/dircolors" ]]; then
+  eval `dircolors $HOME/.dir_colors/dircolors`
+fi
+
