@@ -92,3 +92,18 @@
   description = "Nutzer in Linux hinzufügen"
   command = "adduser newUser"
   output = ""
+
+[[snippets]]
+  description = "initialize a gradle-wrapper in a new project"
+  command = "gradle wrapper --gradle-version=5.2"
+  output = ""
+
+[[snippets]]
+  description = "initialize a new project by using gradle-wrapper"
+  command = "./gradlew init --type java-library --dsl kotlin --test-framework junit"
+  output = ""
+
+[[snippets]]
+  description = "gradlew prints detailed help about the init-task"
+  command = "./gradlew help --task init"
+  output = ""

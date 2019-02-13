@@ -20,6 +20,8 @@ alias port='netstat -tulpn | grep'
 
 alias python='python3'
 
+alias tb='nc termbin.com 9999'
+
 # Functions
 # Find in all files pattern $1
 fif() { ff * -exec grep -nHr "$1" {} \; ; }
