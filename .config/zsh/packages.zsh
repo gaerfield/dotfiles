@@ -67,3 +67,10 @@ zplug "tstack/lnav", \
     use:"*linux*64*", \
     as:command
 
+# json for commandline
+# https://stedolan.github.io/jq/
+zplug "stedolan/jq", \
+    from:gh-r, \
+    use:"*linux64*", \
+    as:command
+
