@@ -19,8 +19,6 @@ zplug "junegunn/fzf-bin", \
 #    use:"*64*linux*", \
 #    hook-build:"ls"
 
-zplug "zsh-users/zsh-completions"
-
 # yubikey uses gpg-agent
 zplug "plugins/gpg-agent", from:oh-my-zsh
 
@@ -46,20 +44,21 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 # IDE-like completion from history
 zplug "tarruda/zsh-autosuggestions", use:"zsh-autosuggestions.zsh"
 
-# code-search utility: https://github.com/monochromegane/the_platinum_searcher
-zplug "monochromegane/the_platinum_searcher", \
-    as:command, \
+zplug 'BurntSushi/ripgrep', \
     from:gh-r, \
-    rename-to:"pt"
-    # frozen:1
+    as:command, \
+    rename-to:"rg"
 
 # console-snippet-manager - go need 218MB - dpkg-package is available
 # zplug 'knqyf263/pet', as:command, hook-build:'go get -d && go build'
-zplug "knqyf263/pet", \
-    from:gh-r, \
-    use:"*linux*64*tar*", \
-    as:command
-zplug "knqyf263/pet", defer:2, use:"misc/completions/zsh"
+#zplug "knqyf263/pet", \
+#    from:gh-r, \
+#    use:"*linux*64*tar*", \
+#    as:plugin
+#zplug "knqyf263/pet", defer:1, \
+#    use:"./pet", \
+#    as:command
+#zplug "knqyf263/pet", defer:2, use:"misc/completions/zsh"
 
 # lnav logfile viewer
 zplug "tstack/lnav", \
@@ -74,3 +73,8 @@ zplug "stedolan/jq", \
     use:"*linux64*", \
     as:command
 
+zplug 'liangguohuan/fzf-marker'
+
+zplug "clvv/fasd", as:command, use:fasd
+zplug "plugins/fasd", from:oh-my-zsh, if:"(( $+commands[fasd] ))", on:"clvv/fasd"
+zplug "wookayin/fzf-fasd"

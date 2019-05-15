@@ -8,7 +8,12 @@ export ZPLUG="$HOME/.zplug"
 #source ~/.fonts/*.sh
 
 # zplug
+export ZSH_CACHE_DIR="$HOME/.cache/zsh"
+if [[ ! -d "$ZSH_CACHE_DIR" ]]; then
+    mkdir -p "$ZSH_CACHE_DIR"
+fi
 
+export ZSH_CACHE_DIR="$HOME/.cache/zsh"
 export ZPLUG_LOADFILE="$ZSH_CONF/packages.zsh"
 source $ZPLUG/init.zsh
 
@@ -33,6 +38,8 @@ source $ZSH_CONF/options.zsh
 source $ZSH_CONF/fzf.zsh
 # autosuggestions
 source $ZSH_CONF/autosuggestions.zsh
+source $ZSH_CONF/fasd.zsh
+source $ZSH_CONF/fzf-marker.zsh
 
 if [[ -s "$HOME/.zlocal" ]]; then
   source "$HOME/.zlocal"

@@ -4,6 +4,7 @@ alias ls='ls --color'
 alias l='ls -tF'     # type, info
 alias la='ls -tFA'   # type, info, all
 alias ll='ls -ltFAh' # long list, type, info, all human readable
+alias xclip='xclip -selection c'
 export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 
 alias grep='grep --color'
@@ -15,12 +16,21 @@ alias ff='find . -type f -name'
 
 alias gpg='gpg2'
 
-alias update='sudo apt-get update && sudo apt-get upgrade -y && sudo aptitude dist-upgrade -y && sudo apt-get autoremove -y'
+alias update='sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y && sudo apt autoremove -y'
 alias port='netstat -tulpn | grep'
 
 alias python='python3'
 
 alias tb='nc termbin.com 9999'
+
+# docker
+alias dcl='docker-compose logs -f'
+alias dcu='docker-compose up && docker-compose logs -f'
+alias dcd='docker-compose down'
+
+# fpt
+alias fpt='pt "" * | fzf'
+#alias fpt='pt "" * | fzf --preview "(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200"'
 
 # Functions
 # Find in all files pattern $1
