@@ -34,4 +34,4 @@ alias fpt='pt "" * | fzf'
 
 # Functions
 # Find in all files pattern $1
-fif() { rg --files-with-matches --no-messages $1 | fzf --preview "(highlight -O ansi -l {} 2> /dev/null || rg $1 {} --pretty -C 10 || tree -C {}) 2> /dev/null | head -200" }
+fif() { rg --files-with-matches --no-messages $1 | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 $1 || rg --ignore-case --pretty --context 10 $1 {}" }
