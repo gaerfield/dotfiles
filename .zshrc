@@ -38,7 +38,6 @@ source $ZSH_CONF/options.zsh
 source $ZSH_CONF/fzf.zsh
 # autosuggestions
 source $ZSH_CONF/autosuggestions.zsh
-source $ZSH_CONF/fasd.zsh
 source $ZSH_CONF/fzf-marker.zsh
 
 if [[ -s "$HOME/.zlocal" ]]; then
