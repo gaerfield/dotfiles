@@ -22,20 +22,6 @@ fi
 # ------------
 source "$FZF_REPO/shell/key-bindings.zsh"
 
-# pass integration
-# ----------------
-_fzf_complete_pass() {
-  _fzf_complete '+m' "$@" < <(
-    pwdir=${PASSWORD_STORE_DIR-~/.password-store/}
-    stringsize="${#pwdir}"
-    find "$pwdir" -name "*.gpg" -print |
-        cut -c "$((stringsize + 1))"-  |
-        sed -e 's/\(.*\)\.gpg/\1/'
-  )
-}
-
-[ -n "$BASH" ] && complete -F _fzf_complete_pass -o default -o bashdefault pass
-
 export FZF_DEFAULT_OPTS='
   --color fg:-1,bg:-1,hl:33,fg+:254,bg+:235,hl+:33
   --color info:136,prompt:136,pointer:230,marker:230,spinner:136
