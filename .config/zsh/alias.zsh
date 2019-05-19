@@ -33,5 +33,10 @@ alias fpt='pt "" * | fzf'
 #alias fpt='pt "" * | fzf --preview "(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200"'
 
 # Functions
-# Find in all files pattern $1
-fif() { rg --files-with-matches --no-messages $1 | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 $1 || rg --ignore-case --pretty --context 10 $1 {}" }
+# fif <searchTerm> - find in files <searchTerm>
+# ---------------------------
+fif() {
+  local FZF_CTRL_T_COMMAND="rg --files-with-matches --no-messages '$1'"
+  local FZF_CTRL_T_OPTS="--preview \"highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 $1 || rg --ignore-case --pretty --context 10 $1 {}\""
+  __fsel
+}
