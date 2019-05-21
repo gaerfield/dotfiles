@@ -35,7 +35,8 @@ export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 # git
 # ---
 
-# GIT heart FZF
+# GIT + FZF
+# https://junegunn.kr/2016/07/fzf-git/
 # -------------
 is_in_git_repo() {
   git rev-parse HEAD > /dev/null 2>&1
