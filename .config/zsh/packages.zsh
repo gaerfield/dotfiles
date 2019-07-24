@@ -28,6 +28,11 @@ zplug "plugins/gpg-agent", from:oh-my-zsh
 zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/docker-compose", from:oh-my-zsh
 #zplug "plugins/docker-machine", from:oh-my-zsh
+# simple docker ui
+zplug "jesseduffield/lazydocker", \
+    from:gh-r, \
+    use:"*Linux*x86*64*", \
+    as:command
 
 #aws
 zplug "plugins/aws", from:oh-my-zsh
