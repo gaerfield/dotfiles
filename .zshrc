@@ -1,12 +1,12 @@
 #
 # User configuration sourced by interactive shells
 #
-export TERM="xterm-256color"
+
+#export TERM="xterm-256color"
 export ZSH_CONF="$HOME/.config/zsh"
 export ZPLUG="$HOME/.zplug"
 
 #source ~/.fonts/*.sh
-
 # zplug
 export ZSH_CACHE_DIR="$HOME/.cache/zsh"
 if [[ ! -d "$ZSH_CACHE_DIR" ]]; then
@@ -47,4 +47,5 @@ fi
  if [[ -s "$HOME/.dir_colors/dircolors" ]]; then
   eval `dircolors $HOME/.dir_colors/dircolors`
 fi
+
 

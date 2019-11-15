@@ -40,6 +40,9 @@ zstyle ':completion:*:*:cd:*:directory-stack' menu yes select
 zstyle ':completion:*' list-prompt '%SAt %p: Hit TAB for more, or the character to insert%s'
 zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
 
+# case-insensitive matching
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
 # Nicer format for completion messages
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 zstyle ':completion:*:corrections' format '%U%F{green}%d (errors: %e)%f%u'

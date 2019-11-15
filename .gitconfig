@@ -1,7 +1,16 @@
 [user]
-	name = gaerfield@posteo.net
-	email = gaerfield@posteo.net
+    name = gaerfield@posteo.net
+    email = gaerfield@posteo.net
+[diff]
+	tool = p4merge
+
 [http]
-	postBuffer = 1157286400
+    postBuffer = 1157286400
 [cola]
-	spellcheck = false
+    spellcheck = false
+[core]
+    autocrlf = input
+[merge]
+	tool = p4merge
+[difftool]
+	prompt = false
