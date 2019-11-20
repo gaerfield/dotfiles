@@ -28,7 +28,7 @@ yadm clone https://github.com/gaerfield/dotfiles.git --bootstrap
   * wookayin/fzf-fasd
 * liangguohuan/fzf-marker
 
-# * command-line snippet manager: [Pet](https://github.com/knqyf263/pet)
+* command-line snippet manager: [Pet](https://github.com/knqyf263/pet)
 
 ### manual configuration
 * [solarized gnome-terminal](https://github.com/Anthony25/gnome-terminal-colors-solarized)
@@ -46,7 +46,6 @@ yadm clone https://github.com/gaerfield/dotfiles.git --bootstrap
 # Non-Console Apps
 * Note-App: [Boostnote](https://boostnote.io/)
 * Launcher: [Cerebro](https://cerebroapp.com/)
-* System Monitoring: [Stacer](https://github.com/oguzhaninan/Stacer)
 * Clipboard-Manager: [CopyQ](https://github.com/hluk/CopyQ)
   ```
     sudo add-apt-repository ppa:hluk/copyq
@@ -58,3 +57,6 @@ yadm clone https://github.com/gaerfield/dotfiles.git --bootstrap
 * Password-Management: [Bitwarden](https://bitwarden.com/)
 * [flameshot](https://github.com/lupoDharkael/flameshot)
   * screenshot command for keyboard-shortcut `flameshot gui -p $HOME/Bilder/screenshots`
+* disk-usage-analyzer [baobab](https://wiki.gnome.org/action/show/Apps/DiskUsageAnalyzer)
+* Offline Documentation Browser [zeal](https://zealdocs.org/)
+
