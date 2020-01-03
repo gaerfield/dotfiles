@@ -42,6 +42,8 @@ yadm clone https://github.com/gaerfield/dotfiles.git --bootstrap
 ### test in the future
 * terminal file manager: [lf](https://github.com/gokcehan/lf)
 * grml
+* view images in console: catimg
+* rofi
 
 # Non-Console Apps
 * Note-App: [Boostnote](https://boostnote.io/)

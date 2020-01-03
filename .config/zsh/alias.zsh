@@ -1,5 +1,6 @@
 setopt COMPLETE_ALIASES
 
+alias cpr="rsync -ah --inplace --no-whole-file --info=progress2"
 alias ls='ls --color'
 alias l='ls -tF'     # type, info
 alias la='ls -tFA'   # type, info, all
