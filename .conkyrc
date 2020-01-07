@@ -1,0 +1,75 @@
+conky.config = {
+    background = true,
+    use_xft = true,
+    xftfont = 'Bitstream Vera Sans Mono:size=9',
+    xftalpha = 0.8,
+    update_interval = 1.0,
+    total_run_times = 0,
+    own_window = true,
+    own_window_type = 'normal',
+    own_window_transparent = false,
+    own_window_argb_visual = true,
+    own_window_argb_value = 120,
+    own_window_colour = 'black',
+    own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+    double_buffer = true,
+    minimum_height = 260,
+    minimum_width = 400,
+    draw_shades = false,
+    draw_outline = false,
+    draw_borders = false,
+    draw_graph_borders = false,
+    stippled_borders = 0,
+    border_margin = 4,
+    border_width = 0,
+    default_color = white,
+    default_shade_color = black,
+    default_outline_color = black,
+    alignment = 'top_right',
+    gap_x = 12,
+    gap_y = 50,
+    no_buffers = true,
+    uppercase = false,
+    cpu_avg_samples = 1,
+    net_avg_samples = 1,
+    override_utf8_locale = false,
+    use_spacer = 'right',
+    mpd_host = 'localhost',
+    mpd_portPort = 6060
+    -- mpd_password
+}
+
+conky.text = [[
+${color #009bf9}$stippled_hr
+${color lightgrey}Processes:$color $processes  ${color grey}Running:$color $running_processes ${color lightgrey}Up:$color $uptime
+${color #009bf9} CPU0 ${cpu cpu0}% ${cpubar cpu0}
+${color #119bf9} CPU1 ${cpu cpu1}% ${cpubar cpu1}
+${color #229bf9} CPU2 ${cpu cpu2}% ${cpubar cpu2}
+${color #339bf9} CPU3 ${cpu cpu3}% ${cpubar cpu3}
+${color #009bf9} CPU4 ${cpu cpu4}% ${cpubar cpu4}
+${color #119bf9} CPU5 ${cpu cpu5}% ${cpubar cpu5}
+${color #229bf9} CPU6 ${cpu cpu6}% ${cpubar cpu6}
+${color #339bf9} CPU7 ${cpu cpu7}% ${cpubar cpu7}
+${color}Name                  PID     CPU%   MEM%
+${font Monospace:size=8}${color lightgrey}${top name 1}     ${top pid 1}  ${top cpu 1}  ${top mem 1}
+${color lightgrey}${top name 2}     ${top pid 2}  ${top cpu 2}  ${top mem 2}
+${color lightgrey}${top name 3}     ${top pid 3}  ${top cpu 3}  ${top mem 3}
+${cpugraph 48,300 009bf9 ffffff}
+
+$font${color #009bf9}RAM: $mem/$memmax - $memperc% ${membar}
+${color lightgrey}Swap: $swap/$swapmax - $swapperc% ${swapbar}
+${color}Name                  PID     CPU%   MEM%
+${font Monospace:size=8}${color lightgrey}${top_mem name 1}     ${top_mem pid 1}  ${top_mem cpu 1}  ${top_mem mem 1}
+${color lightgrey}${top_mem name 2}     ${top_mem pid 2}  ${top_mem cpu 2}  ${top_mem mem 2}
+${color lightgrey}${top_mem name 3}     ${top_mem pid 3}  ${top_mem cpu 3}  ${top_mem mem 3}
+
+
+$font${color #009bf9}Connections${alignr}${color #009bf9}In:$color ${tcp_portmon 1 32767 count}  ${color #009bf9}Out:$color ${tcp_portmon 32768 61000 count}   ${color #009bf9}ALL:$color ${tcp_portmon 1 65535 count}
+${color lightgrey}$stippled_hr
+${execi 7200 ip route get 8.8.8.8 | awk '{print $5; exit}'} ${execi 7200 ip route get 8.8.8.8 | awk '{print $7; exit}'}
+wlan: ${color lightgrey}Down:$color ${downspeed wlp3s0} k/s${color lightgrey} ${offset 80}Up:$color ${upspeed wlpi3s0} k/s
+eth0: ${color lightgrey}Down:$color ${downspeed enp0s31f6} k/s${color lightgrey} ${offset 80}Up:$color ${upspeed enp0s31f6} k/s
+#${downspeedgraph if 32,120 009bf9 ffffff} ${offset 40} ${upspeedgraph if 32,120 009bf9 ffffff}
+${color lightgrey}$stippled_hr
+${color lightgrey}Home:  ${fs_used /home/blaschke}/${fs_size /home/blaschke}  ${fs_bar /home/blaschke}
+]]
