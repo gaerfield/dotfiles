@@ -1,5 +1,6 @@
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
-zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+#zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+zplug romkatv/powerlevel10k, as:theme, depth:1
 zplug "zsh-users/zsh-completions"
 zplug "chrissicool/zsh-256color"
 
