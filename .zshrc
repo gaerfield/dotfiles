@@ -2,7 +2,7 @@
 export ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 export ZSH_CONF="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 export ZPLUG_CACHE_DIR="$ZSH_CACHE_DIR/zplug"
-export ZPLUG="$HOME/.zplug"
+export ZINIT_BIN="$HOME/.zinit"
 export ZPLUG_LOADFILE="$ZSH_CONF/packages.zsh"
 
 function sourceFile () { [[ ! -f "$1" ]] || source "$1" }
@@ -18,21 +18,15 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# should speed up parsing git-repos
-# does it help?
-DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 #source ~/.fonts/*.sh
-# zplug
-source $ZPLUG/init.zsh
+# zinit
+source $HOME/.zinit/bin/zinit.zsh
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
 
-if ! zplug check; then
-    zplug install
-fi
-
-# use --verbose to list loaded plugins
-zplug load #--verbose
-
+# plugin-configuration needed to load at first
+loadConfig packages.zsh
 # powerlevel10k-Konfiguration
 loadConfig theme.zsh
 # Wort vor- und zurück springen
@@ -44,12 +38,15 @@ loadConfig completions.zsh
 # History-Einstellungen etc.
 loadConfig options.zsh
 # fuzzy-search/completions etc.
-loadConfig fzf.zsh
+#loadConfig fzf.zsh
 # autosuggestions
-loadConfig autosuggestions.zsh
-loadConfig fzf-marker.zsh
+#loadConfig autosuggestions.zsh
+#loadConfig fzf-marker.zsh
 
 sourceFile "$HOME/.zlocal"
 
 [[ ! -f "$ZSH_CONF/dircolors" ]] || eval `dircolors $ZSH_CONF/dircolors`
 
+unset -f sourceFile
+unset -f loadConfig
+unset -f assertDirectory
