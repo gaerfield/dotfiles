@@ -2,5 +2,6 @@
     path = .vim/bundle/Vundle.vim
     url = https://github.com/VundleVim/Vundle.vim.git
 [submodule "/home/gaerfield/.zinit/bin"]
-	path = /home/gaerfield/.zinit/bin
-	url = https://github.com/zdharma/zinit.git
+    path = .zinit/bin
+    url = https://github.com/zdharma/zinit.git
+
