@@ -74,6 +74,9 @@ zload jesseduffield/lazydocker
 zcommand from"gh-r" pick"*linux64*" cp"jq* -> $ZPFX/bin/jq"
 zload stedolan/jq
 
+zcommand from"gh-r" pick"*darwin*64" cp"*/pt -> $ZPFX/bin/pt"
+zload monochromegane/the_platinum_searcher
+
 ### powershell 10k
 
 zinit ice depth=1 atload'!source $ZSH_CONF/theme.zsh' nocd

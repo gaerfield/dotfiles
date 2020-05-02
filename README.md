@@ -1,6 +1,6 @@
 # dotfiles
 
-This Repository contains my dotfile-configurations managed by [yadm]() and [zplug]() and some of my main non-console-tools in linux.
+This Repository contains my dotfile-configurations managed by [yadm](https://yadm.io/) and [zinit](https://github.com/zdharma/zinit) and some of my main non-console-tools in linux.
 
 ## install
 ```
@@ -27,12 +27,11 @@ yadm clone https://github.com/gaerfield/dotfiles.git --bootstrap
   * oh-my-zsh/fasd
   * wookayin/fzf-fasd
 * liangguohuan/fzf-marker
-
 * command-line snippet manager: [Pet](https://github.com/knqyf263/pet)
+* [zsh-completions](https://github.com/zsh-users/zsh-completions)
 
 ### manual configuration
 * [solarized gnome-terminal](https://github.com/Anthony25/gnome-terminal-colors-solarized)
-* [zsh-completions](https://github.com/zsh-users/zsh-completions)
 * tmux config-framework: [byobu](http://byobu.co/)
 
 ### needs npm
@@ -43,11 +42,8 @@ yadm clone https://github.com/gaerfield/dotfiles.git --bootstrap
 * terminal file manager: [lf](https://github.com/gokcehan/lf)
 * grml
 * view images in console: catimg
-* rofi
 
 # Non-Console Apps
-* Note-App: [Boostnote](https://boostnote.io/)
-* Launcher: [Cerebro](https://cerebroapp.com/)
 * Clipboard-Manager: [CopyQ](https://github.com/hluk/CopyQ)
   ```
     sudo add-apt-repository ppa:hluk/copyq
@@ -61,4 +57,3 @@ yadm clone https://github.com/gaerfield/dotfiles.git --bootstrap
   * screenshot command for keyboard-shortcut `flameshot gui -p $HOME/Bilder/screenshots`
 * disk-usage-analyzer [baobab](https://wiki.gnome.org/action/show/Apps/DiskUsageAnalyzer)
 * Offline Documentation Browser [zeal](https://zealdocs.org/)
-
