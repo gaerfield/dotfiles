@@ -1,7 +1,7 @@
 # Setup fzf
 # ---------
-FZF_REPO="$ZPLUG/repos/junegunn/fzf"
-FZF_BINPATH="$ZPLUG/bin/"
+FZF_REPO="${ZINIT[PLUGINS_DIR]}/junegunn---fzf"
+FZF_BINPATH="$ZPFX/bin/"
 FZF_MANPATH="$FZF_REPO/man"
 
 if [[ ! "$PATH" =~ "$FZF_BINPATH" ]]; then
