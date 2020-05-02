@@ -22,8 +22,6 @@ autoload -Uz _zinit
 
 # plugin-configuration needed to load at first
 loadConfig packages.zsh
-# powerlevel10k-Konfiguration
-loadConfig theme.zsh
 # Wort vor- und zurück springen
 loadConfig keybindings.zsh
 # Alias

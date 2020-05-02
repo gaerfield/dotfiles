@@ -26,6 +26,7 @@ alias python='python3'
 alias tb='nc termbin.com 9999'
 
 # docker
+alias dco='docker-compose'
 alias dcl='docker-compose logs -f'
 alias dcu='docker-compose up && docker-compose logs -f'
 alias dcd='docker-compose down'
