@@ -1,7 +1,7 @@
-[submodule ".vim/bundle/Vundle.vim"]
-    path = .vim/bundle/Vundle.vim
-    url = https://github.com/VundleVim/Vundle.vim.git
 [submodule ".cache/zsh/zinit/bin"]
     path = .cache/zsh/zinit/bin
     url = https://github.com/zdharma/zinit.git
 
+[submodule ".cache/vim/bundle/Vundle.vim"]
+    path = .cache/vim/bundle/Vundle.vim
+    url = https://github.com/VundleVim/Vundle.vim.git

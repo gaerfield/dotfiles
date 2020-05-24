@@ -9,6 +9,8 @@ ZINIT[HOME_DIR]="$ZINIT_HOME"
 ZINIT[BIN_DIR]="$ZINIT_HOME/bin"
 ZINIT[ZCOMPDUMP_PATH]="$ZSH_CACHE_DIR/zcompdump"
 
+export VIMINIT='let $VIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $VIMRC'
+
 function sourceFile () { [[ ! -f "$1" ]] || source "$1" }
 function loadConfig () { sourceFile "$ZSH_CONF/$1" }
 
