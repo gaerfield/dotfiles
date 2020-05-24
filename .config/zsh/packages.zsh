@@ -28,10 +28,10 @@ zload wookayin/fzf-fasd
 ### ls - colors
 
 zinit ice \
-    atclone"dircolors -b LS_COLORS > dircolors.zsh" \
+    atclone"dircolors -b src/dir_colors > dircolors.zsh" \
     atpull'%atclone' pick"dircolors.zsh" nocompile'!' \
     atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
-zload trapd00r/LS_COLORS
+zload arcticicestudio/nord-dircolors
 
 ### plugins
 

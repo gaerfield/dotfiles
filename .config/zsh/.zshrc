@@ -3,6 +3,12 @@ export ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 export ZSH_CONF="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 export ZPLUG_LOADFILE="$ZSH_CONF/packages.zsh"
 
+typeset -A ZINIT
+ZINIT_HOME="$ZSH_CACHE_DIR/zinit"
+ZINIT[HOME_DIR]="$ZINIT_HOME"
+ZINIT[BIN_DIR]="$ZINIT_HOME/bin"
+ZINIT[ZCOMPDUMP_PATH]="$ZSH_CACHE_DIR/zcompdump"
+
 function sourceFile () { [[ ! -f "$1" ]] || source "$1" }
 function loadConfig () { sourceFile "$ZSH_CONF/$1" }
 
@@ -16,7 +22,7 @@ fi
 
 #source ~/.fonts/*.sh
 # zinit
-source $HOME/.zinit/bin/zinit.zsh
+source "$ZINIT_HOME/bin/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
@@ -37,3 +43,4 @@ sourceFile "$HOME/.zlocal"
 
 unset -f sourceFile
 unset -f loadConfig
+
