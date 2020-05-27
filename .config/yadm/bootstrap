@@ -29,6 +29,7 @@ install_packages() {
 setup_vim() {
   # make sure, vim is installed
   sudo apt install libxml2-utils vim vim-gtk
+  mkdir -p "$XDG_DATA_HOME"/vim/{undo,swap,backup,view}
   vim +silent +PluginInstall +qall
 }
 
