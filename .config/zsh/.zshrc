@@ -38,8 +38,10 @@ loadConfig "alias.zsh"
 loadConfig completions.zsh
 # History-Einstellungen etc.
 loadConfig options.zsh
+# fzf-extras
+loadConfig fzf.zsh
 # autosuggestions
-#loadConfig fzf-marker.zsh
+loadConfig fzf-marker.zsh
 
 sourceFile "$HOME/.zlocal"
 

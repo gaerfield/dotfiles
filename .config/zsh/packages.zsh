@@ -43,6 +43,10 @@ zsnippet OMZ::plugins/extract
 zcompletion https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker
 zcompletion https://raw.githubusercontent.com/docker/compose/master/contrib/completion/zsh/_docker-compose
 
+zcompletion $ZSH_CONF/additional-completions/_kubectl
+zcompletion $ZSH_CONF/additional-completions/_minikube
+zcompletion https://raw.githubusercontent.com/bonnefoa/kubectl-fzf/master/kubectl_fzf.plugin.zsh
+
 ### Binaries
 
 # direnv
