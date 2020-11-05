@@ -18,7 +18,8 @@ alias ff='find . -type f -name'
 
 alias gpg='gpg2'
 
-alias update='sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y && sudo apt autoremove -y'
+alias update='sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y && sudo apt autoremove -y && sudo fwupdmgr update'
+alias updateAll='update && sudo snap refresh'
 alias port='netstat -tulpn | grep'
 
 alias python='python3'
@@ -34,6 +35,16 @@ alias dcd='docker-compose down'
 # fpt
 alias fpt='pt "" * | fzf'
 #alias fpt='pt "" * | fzf --preview "(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200"'
+alias ide='launch idea $@'
+
+launch() {
+  if [[ $1 == "" || $1 == "-h" || $1 == "--help" ]]; then
+    echo 'usage: launch program -with -arguments'
+  else
+    echo "nohup $@ >/dev/null 2>&1 &"
+    nohup $@ >/dev/null 2>&1 &
+  fi
+}
 
 # Functions
 # simple string-compare
