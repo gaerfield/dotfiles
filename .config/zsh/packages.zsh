@@ -1,10 +1,10 @@
-turbo0()   { zinit ice wait"0a" lucid             "${@}"; }
-turbo1()   { zinit ice wait"0b" lucid             "${@}"; }
-turbo2()   { zinit ice wait"0c" lucid             "${@}"; }
-zcommand() { zinit ice wait"0b" lucid as"program" "${@}"; }
+turbo0()   { zinit ice depth"1" wait"0a" lucid             "${@}"; }
+turbo1()   { zinit ice depth"1" wait"0b" lucid             "${@}"; }
+turbo2()   { zinit ice depth"1" wait"0c" lucid             "${@}"; }
+zcommand() { zinit ice depth"1" wait"0b" lucid as"program" "${@}"; }
 zsnippet() { zinit snippet "${@}"; }
-zcompletion() { zinit ice wait lucid as"completion"; zsnippet "${@}"; }
-zload()    { zinit load                           "${@}"; }
+zcompletion() { zinit ice depth"1" wait lucid as"completion"; zsnippet "${@}"; }
+zload()    { zinit load "${@}"; }
 
 ### Fuzzy Finder fzf
 
@@ -27,7 +27,7 @@ zload wookayin/fzf-fasd
 
 ### ls - colors
 
-zinit ice \
+zinit ice depth="1" \
     atclone"dircolors -b src/dir_colors > dircolors.zsh" \
     atpull'%atclone' pick"dircolors.zsh" nocompile'!' \
     atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
@@ -75,14 +75,19 @@ zload dotzero/git-profile
 zcommand from"gh-r" mv"ripgrep* -> ripgrep" pick"ripgrep/rg"
 zload BurntSushi/ripgrep
 
-zcommand from"gh-r" pick"*Linux*x86*64*"
+zcommand from"gh-r" bpick"*Linux*x86*64*"
 zload jesseduffield/lazydocker
 
-zcommand from"gh-r" pick"*linux64*" cp"jq* -> $ZPFX/bin/jq"
+zcommand from"gh-r" bpick"*linux64*" mv"jq* -> jq" pick"jq"
 zload stedolan/jq
 
-zcommand from"gh-r" pick"*darwin*64" cp"*/pt -> $ZPFX/bin/pt"
+zcommand from"gh-r" bpick"*darwin*64" pick"*/pt"
 zload monochromegane/the_platinum_searcher
+
+zcommand from"gh-r" bpick"istio-*linux*amd64*" \
+  pick"*/bin/istioctl" \
+  atclone"source istio*/tools/_istioctl"
+zload istio/istio
 
 ### powershell 10k
 
