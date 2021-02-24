@@ -81,7 +81,7 @@ zload jesseduffield/lazydocker
 zcommand from"gh-r" bpick"*linux64*" mv"jq* -> jq" pick"jq"
 zload stedolan/jq
 
-zcommand from"gh-r" bpick"*darwin*64" pick"*/pt"
+zcommand from"gh-r" pick"*/pt"
 zload monochromegane/the_platinum_searcher
 
 zcommand from"gh-r" bpick"istio-*linux*amd64*" \
