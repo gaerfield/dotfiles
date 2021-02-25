@@ -84,6 +84,9 @@ zload stedolan/jq
 zcommand from"gh-r" pick"*/pt"
 zload monochromegane/the_platinum_searcher
 
+zcommand from"gh-r" bpick"*.tar.gz" mv"yq* -> yq" pick"yq"
+zload mikefarah/yq
+
 zcommand from"gh-r" bpick"istio-*linux*amd64*" \
   pick"*/bin/istioctl" \
   atclone"source istio*/tools/_istioctl"
@@ -98,14 +101,14 @@ zload romkatv/powerlevel10k
 # order of loading plugins: https://github.com/zdharma/zinit/issues/130
 
 # zsh-users/zsh-completions: delay compinit
-turbo0 blockf atpull'zinit creinstall -q .'; zload zsh-users/zsh-completions 
+turbo0 blockf atpull'zinit creinstall -q .'; zload zsh-users/zsh-completions
 
 #zplugin ice blockf \
 #atpull'zplg creinstall zsh-users/zsh-completions'
 #zload zsh-users/zsh-completions
 
 # history-search-multi-word
-turbo1 compile"(hsmw-*|history-*)"; zload zdharma/history-search-multi-word 
+turbo1 compile"(hsmw-*|history-*)"; zload zdharma/history-search-multi-word
 bindkey "^R" history-search-multi-word
 
 turbo0 atinit"zicompinit; zicdreplay"; zload zdharma/fast-syntax-highlighting
