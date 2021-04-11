@@ -1,6 +1,6 @@
 [user]
-    name = gaerfield
-    email = gaerfield@users.noreply.github.com
+	name = gaerfield
+	email = gaerfield@users.noreply.github.com
 [diff]
 	tool = p4merge
 

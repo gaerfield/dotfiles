@@ -59,24 +59,39 @@ zcommand from"gh-r" \
     src="zhook.zsh"
 zload direnv/direnv
 
-# git-extras
-zcommand \
-    pick"$ZPFX/bin/git-*" \
-    make"PREFIX=$ZPFX" nocompile \
-    atclone"source etc/git-extras-completion.zsh" \
-    atpull'%atclone'
-zload tj/git-extras
+if (($PROFILES[(Ie)git-extras])); then
+  # git-extras
+  zcommand \
+      pick"$ZPFX/bin/git-*" \
+      make"PREFIX=$ZPFX" nocompile \
+      atclone"source etc/git-extras-completion.zsh" \
+      atpull'%atclone'
+  zload tj/git-extras
 
-zcommand from"gh-r" pick"*linux*x68*64*"
-zload dotzero/git-profile
+  zcommand from"gh-r" pick"*linux*x68*64*"
+  zload dotzero/git-profile
+fi
+
+if (($PROFILES[(Ie)docker])); then
+  # lazydocker
+  zcommand from"gh-r" bpick"*Linux*x86*64*"
+  zload jesseduffield/lazydocker
+fi
+
+if (($PROFILES[(Ie)kubernetes])); then
+  zcommand from"gh-r" bpick"istio-*linux*amd64*" \
+    ver"1.9.1" \
+    pick"*/bin/istioctl" \
+    atclone"source istio*/tools/_istioctl"
+  zload istio/istio
+
+  zcompletion /usr/share/google-cloud-sdk/completion.zsh.inc
+fi
 
 # other Binaries
 
 zcommand from"gh-r" mv"ripgrep* -> ripgrep" pick"ripgrep/rg"
 zload BurntSushi/ripgrep
-
-zcommand from"gh-r" bpick"*Linux*x86*64*"
-zload jesseduffield/lazydocker
 
 zcommand from"gh-r" bpick"*linux64*" mv"jq* -> jq" pick"jq"
 zload stedolan/jq
@@ -86,11 +101,6 @@ zload monochromegane/the_platinum_searcher
 
 zcommand from"gh-r" bpick"*.tar.gz" mv"yq* -> yq" pick"yq"
 zload mikefarah/yq
-
-zcommand from"gh-r" bpick"istio-*linux*amd64*" \
-  pick"*/bin/istioctl" \
-  atclone"source istio*/tools/_istioctl"
-zload istio/istio
 
 ### powershell 10k
 
