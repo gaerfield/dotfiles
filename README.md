@@ -8,6 +8,29 @@ sudo apt update && sudo apt install git yadm zsh
 yadm clone https://github.com/gaerfield/dotfiles.git --bootstrap
 ```
 
+### post-install steps
+
+* create file `$HOME/.zprofile` to enable sets of "expensive" plugins (these are evaluated in `$HOME/.config/zsh/packages.zsh`):
+
+```
+# desktop
+export PROFILES=(git-extras kubernetes docker)
+```
+
+* create file `$HOME/.zlocal` for configurations valid only on current host, i.e.:
+
+```
+export PATH=~/.local/bin:$PATH
+DEFAULT_USER=blaschke
+alias pip=pip3
+
+export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+```
+
 ## Terminal
 
 ### most important fzf-commands
