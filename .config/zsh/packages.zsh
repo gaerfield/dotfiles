@@ -85,6 +85,9 @@ if (($PROFILES[(Ie)kubernetes])); then
     atclone"source istio*/tools/_istioctl"
   zload istio/istio
 
+  zcommand from"gh-r"
+  zload derailed/k9s
+
   zcompletion /usr/share/google-cloud-sdk/completion.zsh.inc
 fi
 
