@@ -59,6 +59,8 @@ zcommand from"gh-r" \
     src="zhook.zsh"
 zload direnv/direnv
 
+# git-extras
+#
 if (($PROFILES[(Ie)git-extras])); then
   # git-extras
   zcommand \
@@ -72,11 +74,15 @@ if (($PROFILES[(Ie)git-extras])); then
   zload dotzero/git-profile
 fi
 
+# docker
+
 if (($PROFILES[(Ie)docker])); then
   # lazydocker
   zcommand from"gh-r" bpick"*Linux*x86*64*"
   zload jesseduffield/lazydocker
 fi
+
+# kubernetes
 
 if (($PROFILES[(Ie)kubernetes])); then
   zcommand from"gh-r" bpick"istio-*linux*amd64*" \
@@ -85,8 +91,10 @@ if (($PROFILES[(Ie)kubernetes])); then
     atclone"source istio*/tools/_istioctl"
   zload istio/istio
 
-  zcommand from"gh-r"
-  zload derailed/k9s
+  zcommand from"gh-r"; zload derailed/k9s
+
+  zcommand from"gh-r" bpick"kubectx*"; zload ahmetb/kubectx
+  zcommand from"gh-r" bpick"kubens*" id-as"ahmetb/kubens" ; zload ahmetb/kubectx
 
   zcompletion /usr/share/google-cloud-sdk/completion.zsh.inc
 fi
