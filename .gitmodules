@@ -5,5 +5,5 @@
   path = .cache/zsh/zinit/bin
   url = https://github.com/zdharma/zinit.git
 [submodule ".local/share/yadm"]
-  path = .local/share/yadm
-  url = https://github.com/TheLocehiliosan/yadm.git
+	path = .local/share/yadm
+	url = https://github.com/TheLocehiliosan/yadm.git

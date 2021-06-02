@@ -18,7 +18,7 @@ alias ff='find . -type f -name'
 
 alias gpg='gpg2'
 
-alias update='sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y && sudo apt autoremove -y && sudo fwupdmgr update'
+alias update='sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y && sudo apt autoremove -y && sudo fwupdmgr update && yadm submodule update --init --recursive && zinit update --all'
 alias updateAll='update && sudo snap refresh'
 alias port='netstat -tulpn | grep'
 
