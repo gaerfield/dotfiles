@@ -18,7 +18,7 @@ alias ff='find . -type f -name'
 
 alias gpg='gpg2'
 
-alias update='sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y && sudo apt autoremove -y && sudo fwupdmgr update && yadm submodule update --init --recursive && zinit update --all'
+alias update='sudo apt update && sudo apt dist-upgrade -y && sudo apt autoremove -y && sudo fwupdmgr update && yadm submodule update --init --recursive && zinit update --all'
 alias updateAll='update && sudo snap refresh'
 alias port='netstat -tulpn | grep'
 
@@ -36,6 +36,10 @@ alias dcd='docker-compose down'
 alias fpt='pt "" * | fzf'
 #alias fpt='pt "" * | fzf --preview "(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200"'
 alias ide='launch idea $@'
+
+# stream json-logs
+jlog() { jq -R '. as $line | try fromjson catch $line' }
+#alias -g jlog='jq -R '. as $line | try fromjson catch $line''
 
 launch() {
   if [[ $1 == "" || $1 == "-h" || $1 == "--help" ]]; then
