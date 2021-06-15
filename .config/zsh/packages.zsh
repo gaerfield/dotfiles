@@ -38,15 +38,6 @@ zload arcticicestudio/nord-dircolors
 zsnippet OMZ::plugins/gradle
 zsnippet OMZ::plugins/extract
 
-### completions
-
-zcompletion https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker
-zcompletion https://raw.githubusercontent.com/docker/compose/master/contrib/completion/zsh/_docker-compose
-
-zcompletion $ZSH_CONF/additional-completions/_kubectl
-zcompletion $ZSH_CONF/additional-completions/_minikube
-zcompletion https://raw.githubusercontent.com/bonnefoa/kubectl-fzf/master/kubectl_fzf.plugin.zsh
-
 ### Binaries
 
 # direnv
@@ -63,40 +54,20 @@ zload direnv/direnv
 #
 if (($PROFILES[(Ie)git-extras])); then
   # git-extras
-  zcommand \
-      pick"$ZPFX/bin/git-*" \
-      make"PREFIX=$ZPFX" nocompile \
-      atclone"source etc/git-extras-completion.zsh" \
-      atpull'%atclone'
-  zload tj/git-extras
-
-  zcommand from"gh-r" pick"*linux*x68*64*"
-  zload dotzero/git-profile
+  loadConfig packages-git-extras.zsh
 fi
 
 # docker
 
 if (($PROFILES[(Ie)docker])); then
   # lazydocker
-  zcommand from"gh-r" bpick"*Linux*x86*64*"
-  zload jesseduffield/lazydocker
+  loadConfig packages-docker.zsh
 fi
 
 # kubernetes
-
 if (($PROFILES[(Ie)kubernetes])); then
-  zcommand from"gh-r" bpick"istio-*linux*amd64*" \
-    ver"1.9.1" \
-    pick"*/bin/istioctl" \
-    atclone"source istio*/tools/_istioctl"
-  zload istio/istio
-
-  zcommand from"gh-r"; zload derailed/k9s
-
-  zcommand from"gh-r" bpick"kubectx*"; zload ahmetb/kubectx
-  zcommand from"gh-r" bpick"kubens*" id-as"ahmetb/kubens" ; zload ahmetb/kubectx
-
-  zcompletion /usr/share/google-cloud-sdk/completion.zsh.inc
+  loadConfig packages-gcloud.zsh
+  loadConfig packages-kubernetes.zsh
 fi
 
 # other Binaries
