@@ -6,7 +6,11 @@ zsnippet() { zinit snippet "${@}"; }
 zcompletion() { zinit ice depth"1" wait lucid as"completion"; zsnippet "${@}"; }
 zload()    { zinit load "${@}"; }
 
+# zplugin pack installs from: https://github.com/Zsh-Packages
+
 ### Fuzzy Finder fzf
+# requires go to be available :(
+# zplugin pack"bgn+keys" for fzf
 
 # Install `fzf` bynary and tmux helper script
 zcommand from"gh-r";         zload junegunn/fzf-bin
@@ -26,12 +30,13 @@ zsnippet OMZ::plugins/fasd
 zload wookayin/fzf-fasd
 
 ### ls - colors
+zinit pack for dircolors-material
 
-zinit ice depth="1" \
-    atclone"dircolors -b src/dir_colors > dircolors.zsh" \
-    atpull'%atclone' pick"dircolors.zsh" nocompile'!' \
-    atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
-zload arcticicestudio/nord-dircolors
+#zinit ice depth="1" \
+#    atclone"dircolors -b src/dir_colors > dircolors.zsh" \
+#    atpull'%atclone' pick"dircolors.zsh" nocompile'!' \
+#    atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
+#zload arcticicestudio/nord-dircolors
 
 ### plugins
 

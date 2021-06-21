@@ -36,8 +36,8 @@ alias dcl='docker-compose logs -f'
 alias dcu='docker-compose up && docker-compose logs -f'
 alias dcd='docker-compose down'
 
-# fpt
-alias fpt='pt "" * | fzf'
+# fpt - to dangerous!
+# alias fpt='pt "" * | fzf'
 #alias fpt='pt "" * | fzf --preview "(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200"'
 alias ide='launch idea $@'
 

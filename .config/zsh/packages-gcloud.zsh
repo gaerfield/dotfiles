@@ -1,1 +1,1 @@
-zcompletion /usr/share/google-cloud-sdk/completion.zsh.inc
+zsnippet $ZSH_CONF/additional-completions/_gcloud
