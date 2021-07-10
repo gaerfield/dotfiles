@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 log() {
   yellow="\e[0;33m"
