@@ -28,7 +28,7 @@ export PROFILES=(git-extras kubernetes docker)
 
 ```
 export PATH=~/.local/bin:$PATH
-DEFAULT_USER=blaschke
+DEFAULT_USER=gaerfield
 alias pip=pip3
 
 export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
@@ -36,6 +36,13 @@ export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+```
+
+* install remote-server utilities:
+
+```
+sudo apt install -y mosh byobu \
+  && echo "_byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true" >> .zprofile
 ```
 
 ## Terminal
