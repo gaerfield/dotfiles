@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 log() {
   yellow="\e[0;33m"
@@ -43,6 +43,6 @@ cd "$HOME"
 
 init_submodules
 setup_zsh
-install_packages
+#install_packages
 setup_vim
 
