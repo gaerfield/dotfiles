@@ -4,10 +4,12 @@ This Repository contains my dotfile-configurations managed by [yadm](https://yad
 
 ## install
 ```
-sudo apt update && sudo apt install git zsh curl
-mkdir -p ~/.local/bin
-curl -fLo ~/.local/bin/yadm https://github.com/TheLocehiliosan/yadm/raw/master/yadm && chmod a+x ~/.local/bin/yadm
-yadm clone https://github.com/gaerfield/dotfiles.git --bootstrap
+sudo apt -y update && sudo apt -y install git zsh curl \
+  && mkdir -p ~/.local/bin \
+  && curl -fLo ~/.local/bin/yadm https://github.com/TheLocehiliosan/yadm/raw/master/yadm \
+  && chmod a+x ~/.local/bin/yadm \
+  && ~/.local/bin/yadm clone https://github.com/gaerfield/dotfiles.git --bootstrap \
+  && echo "DEFAULT_USER=$USER" >> .zlocal
 ```
 
 ### post-install steps
