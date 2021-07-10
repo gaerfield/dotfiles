@@ -3,13 +3,15 @@
 This Repository contains my dotfile-configurations managed by [yadm](https://yadm.io/) and [zinit](https://github.com/zdharma/zinit) and some of my main non-console-tools in linux.
 
 ## install
-```
+```bash
 sudo apt -y update && sudo apt -y install git zsh curl \
   && mkdir -p ~/.local/bin \
   && curl -fLo ~/.local/bin/yadm https://github.com/TheLocehiliosan/yadm/raw/master/yadm \
-  && chmod a+x ~/.local/bin/yadm \
-  && ~/.local/bin/yadm clone https://github.com/gaerfield/dotfiles.git --bootstrap \
-  && echo "export PATH=~/.local/bin:$PATH" >> .zlocal \
+  && chmod a+x ~/.local/bin/yadm
+```
+relogin because of yadm
+```bash
+yadm clone https://github.com/gaerfield/dotfiles.git --bootstrap \
   && echo "DEFAULT_USER=$USER" >> .zlocal
 ```
 
