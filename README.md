@@ -8,7 +8,8 @@ sudo apt -y update && sudo apt -y install git zsh curl \
   && mkdir -p ~/.local/bin \
   && curl -fLo ~/.local/bin/yadm https://github.com/TheLocehiliosan/yadm/raw/master/yadm \
   && chmod a+x ~/.local/bin/yadm \
-  && ~/.local/bin/yadm clone https://github.com/gaerfield/dotfiles.git --bootstrap \
+  && alias yadm="~/.local/bin/yadm" \
+  && yadm clone https://github.com/gaerfield/dotfiles.git --bootstrap \
   && echo "DEFAULT_USER=$USER" >> .zlocal
 ```
 
