@@ -4,7 +4,9 @@ This Repository contains my dotfile-configurations managed by [yadm](https://yad
 
 ## install
 ```
-sudo apt update && sudo apt install git yadm zsh
+sudo apt update && sudo apt install git zsh curl
+mkdir -p ~/.local/bin
+curl -fLo ~/.local/bin/yadm https://github.com/TheLocehiliosan/yadm/raw/master/yadm && chmod a+x ~/.local/bin/yadm
 yadm clone https://github.com/gaerfield/dotfiles.git --bootstrap
 ```
 
