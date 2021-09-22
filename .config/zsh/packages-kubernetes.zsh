@@ -1,3 +1,5 @@
+export KUBECONFIG="$XDG_CONFIG_HOME/kube/config"
+
 # kubectx
 zcommand from"gh-r" bpick"kubectx*"; zload ahmetb/kubectx
 # zsnippet $ZSH_CONF/additional-completions/_kubectx

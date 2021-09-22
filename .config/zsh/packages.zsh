@@ -8,6 +8,8 @@ zload()    { zinit load "${@}"; }
 
 # zplugin pack installs from: https://github.com/Zsh-Packages
 
+zinit light zinit-zsh/z-a-readurl
+
 ### Fuzzy Finder fzf
 # requires go to be available :(
 # zplugin pack"bgn+keys" for fzf
@@ -56,16 +58,12 @@ zcommand from"gh-r" \
 zload direnv/direnv
 
 # git-extras
-#
 if (($PROFILES[(Ie)git-extras])); then
-  # git-extras
   loadConfig packages-git-extras.zsh
 fi
 
 # docker
-
 if (($PROFILES[(Ie)docker])); then
-  # lazydocker
   loadConfig packages-docker.zsh
 fi
 
