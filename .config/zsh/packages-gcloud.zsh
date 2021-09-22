@@ -8,5 +8,5 @@ zinit id-as'terraform' as'readurl|command' extract \
     for https://releases.hashicorp.com/terraform/
 
 # this is a hack to add terraform completions (completion-file sadly isn't available)
-zplugin ice svn wait'1' atinit'complete -o nospace -C $(which terraform) terraform'
+zplugin ice svn wait'1' lucid atinit'complete -o nospace -C $(which terraform) terraform'
 zplugin light zdharma/null
