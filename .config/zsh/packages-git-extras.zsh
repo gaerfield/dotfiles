@@ -7,3 +7,5 @@ zload tj/git-extras
 
 zcommand from"gh-r" pick"*linux*x68*64*"
 zload dotzero/git-profile
+
+zload wfxr/forgit
