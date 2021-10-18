@@ -22,3 +22,4 @@ zcommand from"gh-r" pick"*linux*x68*64*"
 zload dotzero/git-profile
 
 # sdkman
+

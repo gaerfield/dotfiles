@@ -27,7 +27,7 @@ zload junegunn/fzf
 # the binary
 zcommand make"PREFIX=$ZPFX install"; zload clvv/fasd
 # initialization from oh-my-zsh
-zsnippet OMZ::plugins/fasd
+zsnippet OMZP::fasd
 # integration with fzf
 zload wookayin/fzf-fasd
 
@@ -42,8 +42,9 @@ zinit pack for dircolors-material
 
 ### plugins
 
-zsnippet OMZ::plugins/gradle
-zsnippet OMZ::plugins/extract
+zsnippet OMZP::gradle
+zsnippet OMZP::extract
+zsnippet OMZP::colored-man-pages
 
 ### Binaries
 
@@ -86,6 +87,13 @@ zload monochromegane/the_platinum_searcher
 
 zcommand from"gh-r" bpick"*.tar.gz" mv"yq* -> yq" pick"yq"
 zload mikefarah/yq
+
+zcommand from"gh-r" \
+  bpick"*x86_64*musl" \
+  mv"tldr* > tldr" \
+  atclone"./tldr --seed-config; ./tldr --update" \
+  pick"tldr"
+zload dbrgn/tealdeer
 
 ### powershell 10k
 

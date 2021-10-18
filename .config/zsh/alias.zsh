@@ -19,11 +19,10 @@ alias ff='find . -type f -name'
 alias gpg='gpg2'
 
 update() {
-  sudo -- sh -c 'apt update && apt dist-upgrade -y && apt autoremove -y && fwupdmgr update'
+  sudo -- sh -c 'pamac upate uprade && fwupdmgr update'
   yadm submodule update --init --recursive
   zinit update --all
 }
-alias updateAll='update && sudo snap refresh'
 alias port='netstat -tulpn | grep'
 
 alias python='python3'
