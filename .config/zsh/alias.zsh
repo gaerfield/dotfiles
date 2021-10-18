@@ -19,7 +19,7 @@ alias ff='find . -type f -name'
 alias gpg='gpg2'
 
 update() {
-  sudo -- sh -c 'pamac upate uprade && fwupdmgr update'
+  sudo -- sh -c 'pamac update upgrade && fwupdmgr update'
   yadm submodule update --init --recursive
   zinit update --all
 }
