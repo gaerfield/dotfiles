@@ -25,7 +25,7 @@ zload junegunn/fzf
 
 ### movement with "z"
 # the binary
-zcommand make"PREFIX=$ZPFX install"; zload clvv/fasd
+zcommand make"PREFIX=$ZPFX install" atload'eval "$(fasd --init auto)"'; zload clvv/fasd
 # initialization from oh-my-zsh
 zsnippet OMZP::fasd
 # integration with fzf
