@@ -2,7 +2,7 @@ export EDITOR=vim
 # export LANG=en_US.UTF-8
 
 # CTRL-W deletes word until next slash (instead of space)
- WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 # improved less option
 export LESS='--tabs=4 --no-init --LONG-PROMPT --ignore-case --quit-if-one-screen --RAW-CONTROL-CHARS'
