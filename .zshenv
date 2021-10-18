@@ -9,4 +9,4 @@ export XDG_BIN_HOME=$XDG_LOCAL_HOME/bin
 # set zsh-config-home to XDG-Directory
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
 export HISTFILE="$XDG_DATA_HOME/zsh/history"
-export SDKMAN_DIR="$XDG_LOCAL_HOME/sdkman"
+export SDKMAN_DIR="$XDG_DATA_HOME/sdkman"
