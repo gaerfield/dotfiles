@@ -1,15 +1,5 @@
 zsnippet OMZ::plugins/gradle
 
-# direnv
-
-zcommand from"gh-r" \
-    mv"direnv* -> direnv" \
-    atclone'./direnv hook zsh > zhook.zsh' \
-    atpull'%atclone' \
-    pick"direnv" \
-    src="zhook.zsh"
-zload direnv/direnv
-
 # git-extras
 zcommand \
     pick"$ZPFX/bin/git-*" \
@@ -22,4 +12,3 @@ zcommand from"gh-r" pick"*linux*x68*64*"
 zload dotzero/git-profile
 
 # sdkman
-
