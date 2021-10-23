@@ -85,7 +85,7 @@ zload stedolan/jq
 zcommand from"gh-r" pick"*/pt"
 zload monochromegane/the_platinum_searcher
 
-zcommand from"gh-r" bpick"*.tar.gz" mv"yq* -> yq" pick"yq"
+zcommand from"gh-r" mv"yq* -> yq" pick"yq"
 zload mikefarah/yq
 
 zcommand from"gh-r" \
