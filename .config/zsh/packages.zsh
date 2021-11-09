@@ -8,8 +8,6 @@ zload()    { zinit load "${@}"; }
 
 # zplugin pack installs from: https://github.com/Zsh-Packages
 
-zinit light zdharma-continuum/z-a-readurl
-
 ### Fuzzy Finder fzf
 # requires go to be available :(
 # zplugin pack"bgn+keys" for fzf
