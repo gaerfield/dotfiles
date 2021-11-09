@@ -8,7 +8,7 @@ zload()    { zinit load "${@}"; }
 
 # zplugin pack installs from: https://github.com/Zsh-Packages
 
-zinit light zinit-zsh/z-a-readurl
+zinit light zdharma-continuum/z-a-readurl
 
 ### Fuzzy Finder fzf
 # requires go to be available :(
@@ -101,7 +101,7 @@ zinit ice depth=1 atload'!source $ZSH_CONF/theme.zsh' nocd
 zload romkatv/powerlevel10k
 
 ### this needed to be at last?
-# order of loading plugins: https://github.com/zdharma/zinit/issues/130
+# order of loading plugins: https://github.com/zdharma-continuum/zinit/issues/130
 
 # zsh-users/zsh-completions: delay compinit
 turbo0 blockf atpull'zinit creinstall -q .'; zload zsh-users/zsh-completions
@@ -111,10 +111,10 @@ turbo0 blockf atpull'zinit creinstall -q .'; zload zsh-users/zsh-completions
 #zload zsh-users/zsh-completions
 
 # history-search-multi-word
-turbo1 compile"(hsmw-*|history-*)"; zload zdharma/history-search-multi-word
+turbo1 compile"(hsmw-*|history-*)"; zload zdharma-continuum/history-search-multi-word
 bindkey "^R" history-search-multi-word
 
-turbo0 atinit"zicompinit; zicdreplay"; zload zdharma/fast-syntax-highlighting
+turbo0 atinit"zicompinit; zicdreplay"; zload zdharma-continuum/fast-syntax-highlighting
 turbo0 atload"_zsh_autosuggest_start"; zload zsh-users/zsh-autosuggestions
 
 # unset temporary functions
