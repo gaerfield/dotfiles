@@ -9,3 +9,6 @@ zcommand from"gh-r" pick"*linux*x68*64*"
 zload dotzero/git-profile
 
 zload wfxr/forgit
+
+zcommand from"gh-r"; zload jesseduffield/lazygit
+
