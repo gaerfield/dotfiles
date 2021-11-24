@@ -21,7 +21,7 @@ alias gpg='gpg2'
 update() {
   sudo -- sh -c 'pamac update upgrade && fwupdmgr update'
   yadm submodule update --init --recursive
-  zinit update --all
+  zinit update --all --parallel
 }
 alias port='netstat -tulpn | grep'
 
