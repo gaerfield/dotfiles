@@ -102,7 +102,7 @@ zload romkatv/powerlevel10k
 # order of loading plugins: https://github.com/zdharma-continuum/zinit/issues/130
 
 # zsh-users/zsh-completions: delay compinit
-turbo0 blockf atpull'zinit creinstall -q .'; zload zsh-users/zsh-completions
+turbo0 blockf atpull'zinit creinstall -q ./src'; zload zsh-users/zsh-completions
 
 #zplugin ice blockf \
 #atpull'zplg creinstall zsh-users/zsh-completions'
