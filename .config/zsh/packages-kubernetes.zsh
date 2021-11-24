@@ -3,7 +3,10 @@ export KUBECONFIG="$XDG_CONFIG_HOME/kube/config"
 # kubectl
 : "${K8S_VERSION:=$(curl --silent https://storage.googleapis.com/kubernetes-release/release/stable.txt)}"
 # source <($XDG_BIN_HOME/kubectl completion zsh) <- sourcing not working yet
-zplugin ice pick"/dev/null" mv"*kubectl -> $XDG_BIN_HOME" atclone'chmod +x $XDG_BIN_HOME/kubectl' atpull'%atclone'
+zplugin ice pick"/dev/null" \
+  mv"*kubectl -> $XDG_BIN_HOME" \
+  atclone'chmod +x $XDG_BIN_HOME/kubectl; $XDG_BIN_HOME/kubectl completion zsh > $ZINIT_HOME/completions/_kubectl' \
+  atpull'%atclone'
 zplugin snippet https://storage.googleapis.com/kubernetes-release/release/"$K8S_VERSION"/bin/linux/amd64/kubectl
 
 
@@ -12,7 +15,7 @@ zcommand from"gh-r" bpick"kubectx*"; zload ahmetb/kubectx
 # zsnippet $ZSH_CONF/additional-completions/_kubectx
 
 # kubens
-zcommand from"gh-r" bpick"kubens*" id-as"ahmetb/kubens" ; zload ahmetb/kubectx
+zcommand from"gh-r" bpick"kubens*" id-as"ahmetb/kubens"; zload ahmetb/kubectx
 # zsnippet $ZSH_CONF/additional-completions/_kubens
 
 # k9s
@@ -33,5 +36,6 @@ zsnippet $ZSH_CONF/additional-completions/_minikube
 zcommand from"gh-r" bpick"istio-*linux*amd64*" \
   ver"$ISTIO_VERSION" \
   pick"*/bin/istioctl" \
-  atclone"source istio*/tools/_istioctl"
+  atclone"*/bin/istioctl completion zsh > $ZINIT_HOME/completions/_istioctl" \
+  atpull'%atclone'
 zload istio/istio
