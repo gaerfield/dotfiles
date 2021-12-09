@@ -20,9 +20,9 @@ alias gpg='gpg2'
 
 update() {
   . /etc/os-release
-  if [ $ID="manjaro" ]; then
+  if [ $ID = 'manjaro' ]; then
     sudo -- sh -c 'pamac update upgrade && fwupdmgr update'
-  elif [ $ID="debian" || $ID="ubuntu"]; then
+  elif [ $ID = 'debian' || $ID = 'ubuntu' ]; then
     sudo -- sh -c 'apt update && apt dist-upgrade -y && apt autoremove -y && fwupdmgr update'
   fi
   yadm submodule update --init --recursive
