@@ -4,6 +4,7 @@
 [submodule ".cache/zsh/zinit/bin"]
   path = .cache/zsh/zinit/bin
   url = https://github.com/zdharma-continuum/zinit.git
+  branch = main
 [submodule ".cache/yadm"]
   path = .cache/yadm
   url = https://github.com/TheLocehiliosan/yadm.git
