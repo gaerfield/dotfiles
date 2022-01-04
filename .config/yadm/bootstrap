@@ -10,7 +10,7 @@ log() {
 
 init_submodules() {
   log "init submodules"
-  yadm submodule update --recursive --init
+  ~/.local/bin/yadm submodule update --recursive --init
 }
 
 setup_zsh() {
