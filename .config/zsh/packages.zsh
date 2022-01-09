@@ -88,7 +88,7 @@ zload mikefarah/yq
 
 zcommand from"gh-r" \
   bpick"*x86_64*musl" \
-  mv"tldr* > tldr" \
+  mv"tealdeer* > tldr" \
   atclone"./tldr --seed-config; ./tldr --update" \
   pick"tldr"
 zload dbrgn/tealdeer
