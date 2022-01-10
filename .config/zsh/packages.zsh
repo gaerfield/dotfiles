@@ -49,6 +49,7 @@ zsnippet OMZP::colored-man-pages
 # direnv
 
 zcommand from"gh-r" \
+    bpick"*linux*64*" \
     mv"direnv* -> direnv" \
     atclone'./direnv hook zsh > zhook.zsh' \
     atpull'%atclone' \
