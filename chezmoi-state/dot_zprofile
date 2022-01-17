@@ -1,0 +1,5 @@
+# desktop
+export PROFILES=(desktop git-extras kubernetes docker)
+
+export ISTIO_VERSION="1.11.4"
+export K8S_VERSION="v1.21.5"

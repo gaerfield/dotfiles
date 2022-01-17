@@ -1,0 +1,14 @@
+[".cache/vim/bundle/Vundle.vim"]
+  type = "archive"
+  url = "https://github.com/VundleVim/Vundle.vim/archive/master.tar.gz"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "168h"
+[".cache/zsh/zinit/bin"]
+  type = "archive"
+  # url = "https://github.com/zdharma-continuum/zinit/archive/main.tar.gz"
+  url = "https://github.com/zdharma-continuum/zinit/archive/98d3eaa8beee3c650793b795e0f92ef1679d623e.tar.gz"
+  exact = true
+  stripComponents = 1
+  refreshPeriod = "168h"
+

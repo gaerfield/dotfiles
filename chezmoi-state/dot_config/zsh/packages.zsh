@@ -75,6 +75,11 @@ fi
 
 # other Binaries
 
+zcommand from"gh-r" \
+    atclone'./chezmoi completion zsh > _chezmoi' \
+    atpull'%atclone'
+zload twpayne/chezmoi
+
 zcommand from"gh-r" mv"ripgrep* -> ripgrep" pick"ripgrep/rg"
 zload BurntSushi/ripgrep
 
