@@ -3,30 +3,25 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set important paths
-set undodir=$XDG_DATA_HOME/vim/undo
-set directory=$XDG_DATA_HOME/vim/swap
-set backupdir=$XDG_DATA_HOME/vim/backup
-set viewdir=$XDG_DATA_HOME/vim/view
-set viminfo+='1000,n$XDG_DATA_HOME/vim/viminfo
-set runtimepath=$XDG_CONFIG_HOME/vim,$VIMRUNTIME,$XDG_CONFIG_HOME/vim/after
+set undodir=$XDG_CACHE_HOME/vim/undo
+set directory=$XDG_CACHE_HOME/vim/swap
+set backupdir=$XDG_CACHE_HOME/vim/backup
+set viewdir=$XDG_CACHE_HOME/vim/view
 
-set runtimepath+=$XDG_CACHE_HOME/vim/bundle/Vundle.vim
-call vundle#begin("$XDG_CACHE_HOME/vim/bundle")
+call plug#begin()
 
-" Required for working Vundle
-Plugin 'VundleVim/Vundle.vim'
 " lean Statusbar
-Plugin 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline'
 " Airline Themes
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline-themes'
 " Display Methods and Tags in a Window + Tags on the fly
-Plugin 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 " Fuzzy finder 
-Plugin 'junegunn/fzf'
+Plug 'junegunn/fzf'
 " colorscheme: nord
-Plugin 'arcticicestudio/nord-vim'
+Plug 'arcticicestudio/nord-vim'
 
-call vundle#end()            " required
+call plug#end()            " required
 filetype plugin indent on    " required
 
 " Airline Settings

@@ -17,6 +17,8 @@ alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 
 alias gpg='gpg2'
+alias vim='nvim'
+alias vimdiff='nvim -d'
 
 update() {
   . /etc/os-release
