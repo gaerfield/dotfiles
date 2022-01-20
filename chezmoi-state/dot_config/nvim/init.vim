@@ -3,10 +3,10 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set important paths
-set undodir=$XDG_CACHE_HOME/vim/undo
-set directory=$XDG_CACHE_HOME/vim/swap
-set backupdir=$XDG_CACHE_HOME/vim/backup
-set viewdir=$XDG_CACHE_HOME/vim/view
+set undodir=$XDG_CACHE_HOME/nvim/undo
+set directory=$XDG_CACHE_HOME/nvim/swap
+set backupdir=$XDG_CACHE_HOME/nvim/backup
+set viewdir=$XDG_CACHE_HOME/nvim/view
 
 call plug#begin()
 
