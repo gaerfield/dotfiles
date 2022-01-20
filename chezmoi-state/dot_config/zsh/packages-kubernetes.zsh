@@ -5,7 +5,7 @@ export KUBECONFIG="$XDG_CONFIG_HOME/kube/config"
 # source <($XDG_BIN_HOME/kubectl completion zsh) <- sourcing not working yet
 zplugin ice pick"/dev/null" \
   mv"*kubectl -> $XDG_BIN_HOME" \
-  atclone'chmod +x $XDG_BIN_HOME/kubectl; $XDG_BIN_HOME/kubectl completion zsh > $ZINIT_HOME/completions/_kubectl' \
+  atclone'chmod +x $XDG_BIN_HOME/kubectl; $XDG_BIN_HOME/kubectl completion zsh > _kubectl' \
   atpull'%atclone'
 zplugin snippet https://storage.googleapis.com/kubernetes-release/release/"$K8S_VERSION"/bin/linux/amd64/kubectl
 
@@ -36,6 +36,6 @@ zsnippet $ZSH_CONF/additional-completions/_minikube
 zcommand from"gh-r" bpick"istio-*linux*amd64*" \
   ver"$ISTIO_VERSION" \
   pick"*/bin/istioctl" \
-  atclone"*/bin/istioctl completion zsh > $ZINIT_HOME/completions/_istioctl" \
+  atclone"*/bin/istioctl completion zsh > _istioctl" \
   atpull'%atclone'
 zload istio/istio
