@@ -1,0 +1,13 @@
+version: '2'
+services:
+  shell:
+    build:
+      context: .      
+    image: shell
+    volumes:
+      #- ./bootstraps:/docker-entrypoint-initdb.d
+      - ./docker-entrypoint.sh:/usr/local/bin/docker-entrypoint.sh
+      - ./data:/home/payfree
+
+volumes:
+  data:
