@@ -1,18 +1,18 @@
 # dotfiles
 
-This Repository contains my dotfile-configurations managed by [yadm](https://yadm.io/) and [zinit](https://github.com/zdharma/zinit) and some of my main non-console-tools in linux.
+This Repository contains my dotfile-configurations managed by [chezmoi](https://www.chezmoi.io) and [zinit](https://github.com/zdharma-continuum/zinit) and some of my main non-console-tools in linux.
 
-## install
+* [install and daily operations](https://www.chezmoi.io/user-guide/daily-operations/)
+
 ```bash
-sudo apt -y update && sudo apt -y install git zsh curl \
-  && mkdir -p ~/.local/bin \
-  && curl -fLo ~/.local/bin/yadm https://github.com/TheLocehiliosan/yadm/raw/master/yadm \
-  && chmod a+x ~/.local/bin/yadm
-```
-relogin because of yadm
-```bash
-yadm clone https://github.com/gaerfield/dotfiles.git --bootstrap \
-  && echo "DEFAULT_USER=$USER" >> .zlocal
+# install
+sh -c "$(curl -fsLS chezmoi.io/get)" -- init --apply gaerfield
+# update
+chezmoi update
+# pull latest changes and see diff
+chezmoi git pull -- --rebase && chezmoi diff
+# only install dotfiles without management
+sh -c "$(curl -fsLS chezmoi.io/get)" -- init --one-shot gaerfield
 ```
 
 ### post-install steps
@@ -54,6 +54,7 @@ sudo apt install -y mosh byobu \
 * fif <searchterm>: "find-in-file" does a recursive search including a preview window
 
 ### plugins managed by zplug
+
 * Code-Search: [the platinum searcher](https://github.com/monochromegane/the_platinum_searcher)
 * Log-File-Viewer: [lnav](http://lnav.org/)
 * extract: (oh-my-zsh/extract)
@@ -66,19 +67,21 @@ sudo apt install -y mosh byobu \
 * liangguohuan/fzf-marker
 * command-line snippet manager: [Pet](https://github.com/knqyf263/pet)
 * [zsh-completions](https://github.com/zsh-users/zsh-completions)
+* some plugins are only available when the profile is enabled (s.a. .zprofile):
+  * i.e. the profile kubernetes will enable: `kubectx`, `kubens`, `kubectl` and `k9s`
+  * git-extras will enable: git-related extra commands like lazygit
 
 ### manual configuration
+
 * [solarized gnome-terminal](https://github.com/Anthony25/gnome-terminal-colors-solarized)
 * tmux config-framework: [byobu](http://byobu.co/)
 
-### needs npm
-* man-page in short: [tldr](https://github.com/tldr-pages/tldr)
-* Stack overflow from terminal: [how2](https://github.com/santinic/how2)
-
 ### test in the future
+
 * terminal file manager: [lf](https://github.com/gokcehan/lf)
 * grml
 * view images in console: catimg
+* command-line snippet manager: [Pet](https://github.com/knqyf263/pet)
 
 # Non-Console Apps
 * Clipboard-Manager: [CopyQ](https://github.com/hluk/CopyQ)
