@@ -11,10 +11,10 @@ export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30
 
 alias grep='grep --color'
 
-alias dud='du -d 1 -h'
-alias duf='du -sh *'
-alias fd='find . -type d -name'
-alias ff='find . -type f -name'
+alias du='du -h'
+alias dud='du -d 1'
+alias duf='du -s *'
+alias findfile='find . -type f -name'
 
 alias gpg='gpg2'
 alias vim='nvim'

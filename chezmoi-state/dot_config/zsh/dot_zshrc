@@ -1,3 +1,4 @@
+export EDITOR=nvim
 #export TERM="xterm-256color"
 export ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 export ZSH_CONF="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
@@ -18,7 +19,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-
 #source ~/.fonts/*.sh
 # zinit
 source "$ZINIT_HOME/bin/zinit.zsh"
@@ -27,18 +27,20 @@ autoload -Uz _zinit
 
 # plugin-configuration needed to load at first
 loadConfig packages.zsh
-# Wort vor- und zurück springen
+# jump words and extras
 loadConfig keybindings.zsh
 # Alias
 loadConfig "alias.zsh"
-# Auto-Completion
+# configuration for Auto-Completion
 loadConfig completions.zsh
-# History-Einstellungen etc.
+# history-configuration ans some extras
 loadConfig options.zsh
 # fzf-extras
 loadConfig fzf.zsh
 # autosuggestions
 loadConfig fzf-marker.zsh
+# change the terminal title based on the executed command
+loadConfig terminal-autotitle.zsh
 
 sourceFile "$HOME/.zlocal"
 
