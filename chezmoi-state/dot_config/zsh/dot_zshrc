@@ -1,4 +1,4 @@
-export EDITOR=nvim
+export EDITOR=/usr/bin/nvim
 #export TERM="xterm-256color"
 export ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 export ZSH_CONF="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
