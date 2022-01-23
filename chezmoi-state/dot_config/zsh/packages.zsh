@@ -47,7 +47,6 @@ zsnippet OMZP::colored-man-pages
 ### Binaries
 
 # direnv
-
 zcommand from"gh-r" \
     bpick"*linux*64*" \
     mv"direnv* -> direnv" \
@@ -100,9 +99,7 @@ zcommand from"gh-r" \
 zload dbrgn/tealdeer
 
 ### powershell 10k
-
-zinit ice depth=1 atload'!source $ZSH_CONF/theme.zsh' nocd
-zload romkatv/powerlevel10k
+loadConfig prompt.zsh
 
 ### this needed to be at last?
 # order of loading plugins: https://github.com/zdharma-continuum/zinit/issues/130

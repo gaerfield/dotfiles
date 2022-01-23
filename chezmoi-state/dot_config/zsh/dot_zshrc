@@ -19,7 +19,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-#source ~/.fonts/*.sh
 # zinit
 source "$ZINIT_HOME/bin/zinit.zsh"
 autoload -Uz _zinit
