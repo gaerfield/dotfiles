@@ -88,6 +88,12 @@ This Repository contains my dotfile-configurations managed by:
 
 ### neovim configuration
 
+Plugins:
+* [vim-airline/vim-airline](https://github.com/vim-airline/vim-airline): status/tabline for vim
+* [vim-airline/vim-airline-themes](https://github.com/vim-airline/vim-airline-themes):  collection of themes for vim-airline
+* [junegunn/fzf](https://github.com/junegunn/fzf): the command-line fuzzy finder in vim
+* [arcticicestudio/nord-vim](https://github.com/arcticicestudio/nord-vim): [nordic](https://www.nordtheme.com/) colorscheme for vim
+
 ### zinit managed plugins and config
 
 #### general
