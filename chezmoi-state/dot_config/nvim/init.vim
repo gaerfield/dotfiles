@@ -14,8 +14,6 @@ call plug#begin()
 Plug 'vim-airline/vim-airline'
 " Airline Themes
 Plug 'vim-airline/vim-airline-themes'
-" Display Methods and Tags in a Window + Tags on the fly
-Plug 'majutsushi/tagbar'
 " Fuzzy finder 
 Plug 'junegunn/fzf'
 " colorscheme: nord
