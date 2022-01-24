@@ -53,16 +53,17 @@ RUN chsh -s /bin/zsh && \
     adduser --disabled-password --shell /bin/zsh --uid "${PUID}" --home "/home/${PUSERNAME}" --gecos '' "${PUSERNAME}" && \
     mkdir --mode 0777 /init  
 
-COPY chezmoi-state /home/${PUSERNAME}/.local/share/chezmoi/chezmoi-state
-COPY .chezmoiroot /home/${PUSERNAME}/.local/share/chezmoi/.chezmoiroot
-RUN chown -R ${PUSERNAME}:${PUSERNAME} /home/${PUSERNAME} 
+# uncomment if you want to use your local files to build the image
+# COPY . /home/${PUSERNAME}/.local/share/chezmoi/
+# RUN chown -R ${PUSERNAME}:${PUSERNAME} /home/${PUSERNAME} 
 
 WORKDIR /home/${PUSERNAME}
 USER ${PUSERNAME}
 
 RUN mkdir -p ~/.local/bin && \
-    # sh -c "$(curl -fsLS chezmoi.io/get)" -- init --apply gaerfield && rm -rf ~/bin && \
-   sh -c "$(curl -fsLS chezmoi.io/get) -b ." && ./chezmoi init && ./chezmoi apply && rm ./chezmoi && \
+   sh -c "$(curl -fsLS chezmoi.io/get)" -- init --apply gaerfield && rm -rf ~/bin && \
+   # uncomment if you want to use your local files to build the image
+   # sh -c "$(curl -fsLS chezmoi.io/get) -b ." && ./chezmoi init && ./chezmoi apply && rm ./chezmoi && \
    ZSH_NO_INIT=1 zsh -ils -c -- '@zinit-scheduler burst'
 RUN mkdir -p ~/.cache/nvim/undo ~/.cache/nvim/swap ~/.cache/nvim/backup ~/.cache/nvim/view && XDG_CACHE_HOME=/home/${PUSERNAME}/.cache nvim +'PlugInstall --sync' +qa
 RUN mkdir /init/home-${PUSERNAME} && rsync -a ~/ /init/home-${PUSERNAME}/ && rm -rf ~/*

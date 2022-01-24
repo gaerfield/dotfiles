@@ -29,8 +29,9 @@ update() {
   elif [ $ID = 'debian' ] || [ $ID = 'ubuntu' ]; then
     sudo -- sh -c 'apt update && apt dist-upgrade -y && apt autoremove -y && fwupdmgr update'
   fi
-  yadm submodule update --init --recursive
+  chezmoi update
   zinit update --all --parallel
+  nvim +silent +PlugUpdate +PlugUpgrade +qa
 }
 alias port='netstat -tulpn | grep'
 
