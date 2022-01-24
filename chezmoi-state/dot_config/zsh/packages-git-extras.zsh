@@ -12,3 +12,10 @@ zload wfxr/forgit
 
 zcommand from"gh-r"; zload jesseduffield/lazygit
 
+zcommand \
+  from"gh-r" \
+  ver"latest" \
+  bpick"*.tar.gz" \
+  atclone"./*/bin/gh completion -s zsh > _gh" \
+  atpull'%atclone'
+zload cli/cli
