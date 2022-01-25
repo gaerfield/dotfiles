@@ -14,8 +14,16 @@ call plug#begin()
 Plug 'vim-airline/vim-airline'
 " Airline Themes
 Plug 'vim-airline/vim-airline-themes'
-" Fuzzy finder 
-Plug 'junegunn/fzf'
+" Fuzzy finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+" NERDTree filebrowser
+Plug 'preservim/nerdtree'
+" git
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+" quoting 
+Plug 'tpope/vim-surround'
 " colorscheme: nord
 Plug 'arcticicestudio/nord-vim'
 
@@ -94,35 +102,31 @@ set undolevels=1000 " Number of undo levels
 set backspace=indent,eol,start  " Backspace behaviour
 set whichwrap+=<,>,h,l
 
+" fzf-config
+" preview '(highlight -O ansi -l {} 2> /dev/null || cat {}
+command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', 'highlight -O ansi -l {} 2> /dev/null || cat {}']}, <bang>0)
+
 " Own keybindings
 """""""""""""""""
 " use jj to escape Insert Mode
-inoremap jj <Esc>
-let mapleader = ','
-" Edit vimrc
-nnoremap <leader>e :tabedit ~/.vimrc<cr>
-" Source vimrc
-nnoremap <leader>s :so ~/.vimrc<cr>
-" Jump to tag
-nnoremap <leader>, <C-]>
+" let mapleader = ','
+" Edit vim-config
+" nnoremap <leader>ev :tabedit $XDG_CONFIG_HOME/nvim/init.vim<cr>
 
 " Plugin keybindings
 """"""""""""""""""""
-"Tagbar 
-nmap <leader>8 :TagbarToggle<CR>
+map <F5> :NERDTreeToggle<CR>
+map <F2> :Files<CR>
 
 " Own Scripts
 """""""""""""
-"XML formatieren mit gg=G
-au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
+" XML formatieren mit gg=G
+" au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 """""""""""""
-"nutzt die Dunkle Variante des Themes
-command Dark execute ":set background=dark"
-
-" Sonstige Infos
-""""""""""""""""
-" in Kommandos wie 'inoremap' darf kein space am Ende sein
-" das funktioniert
-"inoremap jj <Esc>
-" mit Kommentar nicht
-"inoremap jj <Esc>    "Kommentar, dadurch werden die Leerzeichen mit gemappt
+" nutzt die Dunkle Variante des Themes
+" command Dark execute ":set background=dark"
+command Editvimc execute ":tabedit $XDG_CONFIG_HOME/nvim/init.vim"
+command Sovimc execute ":so $XDG_CONFIG_HOME/nvim/init.vim"
+command Editzsh execute ":tabedit $XDG_CONFIG_HOME/zsh/.zshrc"
+ 
