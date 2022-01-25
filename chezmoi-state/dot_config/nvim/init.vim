@@ -1,4 +1,4 @@
-"" Plugins -> has to be on top
+" Plugins -> has to be on top
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -77,6 +77,7 @@ set ignorecase                  " Always case-insensitive
 set incsearch                   " Searches for strings incrementally
 set wildignorecase              " case insensitive searching -> TAB completion
 "set fileignorecase             " case insensitive file searching -> even without TAB completion
+set inccommand=split
 
 " Indentation
 set autoindent      " Auto-indent new lines
