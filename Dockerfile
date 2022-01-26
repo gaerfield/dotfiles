@@ -17,6 +17,7 @@ ENV PUSERNAME=${PUSERNAME} PUID=${PUID} PGID=${PGID} \
     EDITOR=/usr/bin/vim
 
 RUN apt-get update \
+  && apt-get upgrade -y \
   && apt-get install -y \
     apt-transport-https \
     bsdmainutils \
@@ -24,12 +25,15 @@ RUN apt-get update \
     coreutils \
     ca-certificates \
     curl \
+    dnsutils \
     file \
     git \
     gnupg \
+    iputils-ping \
     libxml2-utils \
     make \
     nano \
+    nmap \
     netcat \
     rsync \
     sed \
