@@ -23,7 +23,7 @@ setopt HIST_IGNORE_SPACE         # Do not record an event starting with a space.
 setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history file.
 
 ## Options section
-setopt correct                   # Auto correct mistakes
+unsetopt correct                 # dont auto correct mistakes, never used it
 setopt extendedglob              # Extended globbing. Allows using regular expressions with *
 setopt nocaseglob                # Case insensitive globbing
 setopt numericglobsort           # Sort filenames numerically when it makes sense

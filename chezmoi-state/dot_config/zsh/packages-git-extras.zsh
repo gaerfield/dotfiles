@@ -16,6 +16,7 @@ zcommand \
   from"gh-r" \
   ver"latest" \
   bpick"*.tar.gz" \
+  pick"./*/bin/gh"  \
   atclone"./*/bin/gh completion -s zsh > _gh" \
   atpull'%atclone'
 zload cli/cli
