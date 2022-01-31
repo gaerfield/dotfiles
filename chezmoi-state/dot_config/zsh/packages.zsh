@@ -74,7 +74,16 @@ fi
 
 # other Binaries
 
+if [[ $arch = *"arm"* ]]; then
+  # explicit arm version
+  chezmoiPick="*linux_arm64.tar.gz"
+else
+  # or default
+  chezmoiPick=""
+fi
+
 zcommand from"gh-r" \
+    bpick"$chezmoiPick" \
     atclone'./chezmoi completion zsh > _chezmoi' \
     atpull'%atclone'
 zload twpayne/chezmoi
