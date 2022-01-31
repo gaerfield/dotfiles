@@ -46,9 +46,6 @@ set wildmenu                    " Opens a menue when there is more than one file
 set wildmode=list:longest,full  " Shows all possible files/commands/... in a list
 set t_Co=256                    " Colors to 256, for TODO
 silent! colorscheme nord        " 'silent' to not fail before install
-if (has("termguicolors"))
-  set termguicolors
-endif
 set clipboard=unnamedplus       " Nutze den STRG+C/STRG+V - copy-paste-buffer
 
 " Display
@@ -130,4 +127,11 @@ map <F2> :Files<CR>
 command Editvimc execute ":tabedit $XDG_CONFIG_HOME/nvim/init.vim"
 command Sovimc execute ":so $XDG_CONFIG_HOME/nvim/init.vim"
 command Editzsh execute ":tabedit $XDG_CONFIG_HOME/zsh/.zshrc"
- 
+" Function to source only if file exists {
+function! SourceIfExists(file)
+  if filereadable(expand(a:file))
+    exe 'source' a:file
+  endif
+endfunction
+" }
+call SourceIfExists("$XDG_CONFIG_HOME/nvim/init-local.vim")
