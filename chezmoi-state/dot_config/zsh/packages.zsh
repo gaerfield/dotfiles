@@ -73,12 +73,14 @@ if (($PROFILES[(Ie)kubernetes])); then
 fi
 
 # other Binaries
-
-if [[ $arch = *"arm"* ]]; then
-  # explicit arm version
+if [[ $arch = *"x86_64"* ]]; then
+  # this is a standard x64 machine
+  chezmoiPick="*linux_amd64.tar.gz"
+elif [[ $arch = *"arm"* ]]; then
+  # a raspi
   chezmoiPick="*linux_arm64.tar.gz"
 else
-  # or default
+  # or fall back to default
   chezmoiPick=""
 fi
 
