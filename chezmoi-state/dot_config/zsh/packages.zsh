@@ -91,6 +91,8 @@ zcommand from"gh-r" \
     atpull'%atclone'
 zload twpayne/chezmoi
 
+unset chezmoiPick
+
 zcommand from"gh-r" mv"ripgrep* -> ripgrep" pick"ripgrep/rg"
 zload BurntSushi/ripgrep
 
@@ -106,12 +108,25 @@ zload monochromegane/the_platinum_searcher
 zcommand from"gh-r" mv"yq* -> yq" pick"yq"
 zload mikefarah/yq
 
+if [[ $arch = *"x86_64"* ]]; then
+  # this is a standard x64 machine
+  tldrPick="*linux*x86_64*"
+elif [[ $arch = *"arm"* ]]; then
+  # a raspi
+  tldrPick="*linux*armv7*"
+else
+  # or fall back to default
+  tldrPick=""
+fi
+
 zcommand from"gh-r" \
-  bpick"*linux*x86_64*" \
+  bpick"$tldrPick" \
   mv"tealdeer* > tldr" \
   atclone"./tldr --seed-config; ./tldr --update" \
   pick"tldr"
 zload dbrgn/tealdeer
+
+unset tldrPick
 
 ### powershell 10k
 loadConfig prompt.zsh
