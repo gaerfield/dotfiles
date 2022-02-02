@@ -7,6 +7,7 @@ zcompletion() { zinit ice depth"1" wait lucid as"completion"; zsnippet "${@}"; }
 zload()    { zinit load "${@}"; }
 
 # zplugin pack installs from: https://github.com/Zsh-Packages
+arch="$(uname -m)"
 
 ### Fuzzy Finder fzf
 # requires go to be available :(
@@ -72,7 +73,6 @@ if (($PROFILES[(Ie)kubernetes])); then
   loadConfig packages-kubernetes.zsh
 fi
 
-arch="$(uname -m)"
 # other Binaries
 if [[ $arch = *"x86_64"* ]]; then
   # this is a standard x64 machine
@@ -94,8 +94,11 @@ zload twpayne/chezmoi
 zcommand from"gh-r" mv"ripgrep* -> ripgrep" pick"ripgrep/rg"
 zload BurntSushi/ripgrep
 
-zcommand from"gh-r" bpick"*linux64*" mv"jq* -> jq" pick"jq"
-zload stedolan/jq
+if [[ $arch = *"x86_64"* ]]; then
+  # jq only available for x86-arch: https://github.com/stedolan/jq/issues/2275
+  zcommand from"gh-r" bpick"*linux64*" mv"jq* -> jq" pick"jq"
+  zload stedolan/jq
+fi
 
 zcommand from"gh-r" pick"*/pt"
 zload monochromegane/the_platinum_searcher
