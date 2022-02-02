@@ -72,6 +72,7 @@ if (($PROFILES[(Ie)kubernetes])); then
   loadConfig packages-kubernetes.zsh
 fi
 
+arch="$(uname -m)"
 # other Binaries
 if [[ $arch = *"x86_64"* ]]; then
   # this is a standard x64 machine
