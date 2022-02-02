@@ -79,7 +79,7 @@ if [[ $arch = *"x86_64"* ]]; then
   chezmoiPick="*linux_amd64.tar.gz"
 elif [[ $arch = *"arm"* ]]; then
   # a raspi
-  chezmoiPick="*linux_arm64.tar.gz"
+  chezmoiPick="*linux_arm.tar.gz"
 else
   # or fall back to default
   chezmoiPick=""
