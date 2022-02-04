@@ -14,7 +14,7 @@ arch="$(uname -m)"
 # zplugin pack"bgn+keys" for fzf
 
 # Install `fzf` bynary and tmux helper script
-zcommand from"gh-r";         zload junegunn/fzf-bin
+zcommand from"gh-r";         zload junegunn/fzf
 zcommand pick"bin/fzf-tmux"; zload junegunn/fzf
 
 # Create and bind multiple widgets using fzf
