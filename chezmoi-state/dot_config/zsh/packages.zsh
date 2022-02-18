@@ -18,11 +18,6 @@ zinit light zdharma-continuum/zinit-annex-patch-dl
 
 zinit pack"bgn-binary+keys" for fzf
 
-# Create and bind multiple widgets using fzf
-#turbo0 multisrc"shell/{completion,key-bindings}.zsh" \
-#        id-as"junegunn/fzf_completions" pick"/dev/null"
-#zload junegunn/fzf
-
 ### movement with "z"
 # the binary
 zcommand make"PREFIX=$ZPFX install" atload'eval "$(fasd --init auto)"'; zload clvv/fasd
@@ -32,13 +27,13 @@ zsnippet OMZP::fasd
 zload wookayin/fzf-fasd
 
 ### ls - colors
-zinit pack for dircolors-material
 
-#zinit ice depth="1" \
-#    atclone"dircolors -b src/dir_colors > dircolors.zsh" \
-#    atpull'%atclone' pick"dircolors.zsh" nocompile'!' \
-#    atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
-#zload arcticicestudio/nord-dircolors
+zinit ice depth="1" \
+  atclone'(( !${+commands[dircolors]} )) && local P=g; \
+    TERM=ansi ${P}dircolors -b src/dir_colors >! colors.zsh' \
+  atpull'%atclone' pick"colors.zsh" nocompile'!' reset \
+  atload'zstyle ":completion:*:default" list-colors "${(s.:.)LS_COLORS}";'
+zload arcticicestudio/nord-dircolors
 
 ### plugins
 
