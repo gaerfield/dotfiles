@@ -9,18 +9,19 @@ zload()    { zinit load "${@}"; }
 # zplugin pack installs from: https://github.com/Zsh-Packages
 arch="$(uname -m)"
 
-### Fuzzy Finder fzf
-# requires go to be available :(
-# zplugin pack"bgn+keys" for fzf
+# annexes
 
-# Install `fzf` bynary and tmux helper script
-zcommand from"gh-r";         zload junegunn/fzf
-zcommand pick"bin/fzf-tmux"; zload junegunn/fzf
+zinit light zdharma-continuum/zinit-annex-bin-gem-node
+zinit light zdharma-continuum/zinit-annex-patch-dl
+
+# fzf
+
+zinit pack"bgn-binary+keys" for fzf
 
 # Create and bind multiple widgets using fzf
-turbo0 multisrc"shell/{completion,key-bindings}.zsh" \
-        id-as"junegunn/fzf_completions" pick"/dev/null"
-zload junegunn/fzf
+#turbo0 multisrc"shell/{completion,key-bindings}.zsh" \
+#        id-as"junegunn/fzf_completions" pick"/dev/null"
+#zload junegunn/fzf
 
 ### movement with "z"
 # the binary
@@ -142,7 +143,7 @@ turbo0 blockf atpull'zinit creinstall -q ./src'; zload zsh-users/zsh-completions
 #zload zsh-users/zsh-completions
 
 # history-search-multi-word
-turbo1 compile"(hsmw-*|history-*)"; zload zdharma-continuum/history-search-multi-word
+turbo0 compile"(hsmw-*|history-*)"; zload zdharma-continuum/history-search-multi-word
 bindkey "^R" history-search-multi-word
 
 turbo0 atinit"zicompinit; zicdreplay"; zload zdharma-continuum/fast-syntax-highlighting

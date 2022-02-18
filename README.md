@@ -24,6 +24,13 @@ This Repository contains my dotfile-configurations managed by:
   * Installation: `nvim +silent +PlugInstall +qa`
   * Update:`nvim +silent +PlugUpdate +PlugUpgrade +qa`
 
+## pre-requirements
+
+```
+sudo apt install nvim jq
+mkdir -p ~/.cache/nvim/{backup,swap,undo,view}
+```
+
 ## post-install steps
 
 * create file `$HOME/.zprofile` to enable sets of "expensive" plugins (these are evaluated in `$HOME/.config/zsh/packages.zsh`):
