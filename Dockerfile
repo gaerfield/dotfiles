@@ -29,7 +29,9 @@ RUN apt-get update \
     file \
     git \
     gnupg \
+    htop \
     iputils-ping \
+    jq \
     libxml2-utils \
     make \
     nano \
@@ -41,6 +43,7 @@ RUN apt-get update \
     tmux \
     tree \
     neovim \
+    watch \
     wget \
     zsh \
   # zsh-build-tools
