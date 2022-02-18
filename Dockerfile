@@ -29,6 +29,7 @@ RUN apt-get update \
     file \
     git \
     gnupg \
+    highlight \
     htop \
     iputils-ping \
     jq \
