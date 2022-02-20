@@ -1,26 +1,5 @@
 # Setup fzf
 # ---------
-FZF_REPO="${ZINIT[PLUGINS_DIR]}/junegunn---fzf"
-FZF_BINPATH="$ZPFX/bin/"
-FZF_MANPATH="$FZF_REPO/man"
-
-if [[ ! "$PATH" =~ "$FZF_BINPATH" ]]; then
-  export PATH="$PATH:$FZF_BINPATH"
-fi
-
-# Man path
-# --------
-if [[ ! "$MANPATH" =~ "$FZF_MANPATH" && -d "$FZF_MANPATH" ]]; then
-  export MANPATH="$MANPATH:$FZF_MANPATH"
-fi
-
-# Auto-completion
-# ---------------
-[[ $- =~ i ]] && source "$FZF_REPO/shell/completion.zsh"
-
-# Key bindings
-# ------------
-source "$FZF_REPO/shell/key-bindings.zsh"
 
 export FZF_DEFAULT_OPTS='
   --color fg:-1,bg:-1,hl:33,fg+:254,bg+:235,hl+:33
