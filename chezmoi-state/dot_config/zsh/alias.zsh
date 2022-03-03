@@ -29,7 +29,7 @@ update() {
   elif [ $ID = 'debian' ] || [ $ID = 'ubuntu' ]; then
     sudo -- sh -c 'apt update && apt dist-upgrade -y && apt autoremove -y && fwupdmgr update'
   fi
-  chezmoi update
+  chezmoi update --refresh-externals
   zinit update --all --parallel
   nvim +silent +PlugUpdate +PlugUpgrade +qa
 }
