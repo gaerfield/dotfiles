@@ -10,13 +10,33 @@ zload()    { zinit load "${@}"; }
 arch="$(uname -m)"
 
 # annexes
-
 zinit light zdharma-continuum/zinit-annex-bin-gem-node
-zinit light zdharma-continuum/zinit-annex-patch-dl
+
+case "$OSTYPE" in
+  linux*) bpick='*((#s)|/)*(linux|musl)*((#e)|/)*' ;;
+  darwin*) bpick='*(macos|darwin)*' ;;
+  *) echo 'WARN: unsupported system -- some cli programs might not work' ;;
+esac
 
 # fzf
 
-zinit pack"bgn-binary+keys" for fzf
+#zinit pack"bgn-binary+keys" for fzf
+
+zinit \
+    atclone'mkdir -p $ZPFX/{bin,man/man1}; \
+      curl -s https://raw.githubusercontent.com/junegunn/fzf/master/shell/completion.zsh > _fzf_completion; \
+      curl -s https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.zsh > key-bindings.zsh; \
+      curl -s https://raw.githubusercontent.com/junegunn/fzf/master/man/man1/fzf-tmux.1 > $ZPFX/man/man1/fzf-tmux.1; \
+      curl -s https://raw.githubusercontent.com/junegunn/fzf/master/man/man1/fzf.1 > $ZPFX/man/man1/fzf.1' \
+    atpull'%atclone' \
+    from'gh-r' \
+    id-as'junegunn/fzf' \
+    lucid \
+    nocompile \
+    pick'/dev/null' \
+    sbin'fzf' \
+    src'key-bindings.zsh' \
+  for junegunn/fzf
 
 ### movement with "z"
 # the binary

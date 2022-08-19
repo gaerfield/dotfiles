@@ -9,17 +9,16 @@ zplugin ice pick"/dev/null" \
   atpull'%atclone'
 zplugin snippet https://storage.googleapis.com/kubernetes-release/release/"$K8S_VERSION"/bin/linux/amd64/kubectl
 
-
 # kubectx
-zcommand from"gh-r" bpick"kubectx*"; zload ahmetb/kubectx
+zcommand from"gh-r" bpick"kubectx*linux_x86_64*"; zload ahmetb/kubectx
 # zsnippet $ZSH_CONF/additional-completions/_kubectx
 
 # kubens
-zcommand from"gh-r" bpick"kubens*" id-as"ahmetb/kubens"; zload ahmetb/kubectx
+zcommand from"gh-r" bpick"kubens*linux_x86_64*" id-as"ahmetb/kubens"; zload ahmetb/kubectx
 # zsnippet $ZSH_CONF/additional-completions/_kubens
 
 # k9s
-zcommand from"gh-r"; zload derailed/k9s
+zcommand from"gh-r" bpick"*inux_x86_64*"; zload derailed/k9s
 
 # jsonnet and jsonnet-bundler
 #zcommand from"gh-r" mv"tk* -> tk"; zload grafana/tanka
