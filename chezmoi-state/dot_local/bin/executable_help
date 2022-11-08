@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# takes "## Basics" section of the README, cuts first and last line
+cat "$XDG_DATA_HOME/chezmoi/README.md" | grep -oPz  '(?s)\n## Basics.*?\n## ' | tail -n +2 | head -n -1 | highlight --syntax markdown --out-format ansi | less
+
+echo "\nfind more help here: https://github.com/payfree-io/bag-fast-track-dotfiles"
