@@ -1,11 +1,6 @@
-# Enable completions
-if [ -d ~/.zsh/comp ]; then
-    fpath=(~/.zsh/comp $fpath)
-    autoload -U ~/.zsh/comp/*(:t)
-fi
-
+zstyle ':zim:completion' dumpfile "$ZSH_CACHE_DIR/zcompdump"
 zstyle ':completion::complete:*' use-cache 1
-zstyle ':completion::complete:*' cache-path $ZSH_CACHE
+zstyle ':completion::complete:*' cache-path "$ZSH_CACHE_DIR/zcompcache"
 
 # Enable approximate completions
 zstyle ':completion:*' completer _complete _ignored _approximate
@@ -80,8 +75,6 @@ zstyle ':completion:*:*:*:users' ignored-patterns \
 		usbmux uucp vcsa wwwrun xfs cron mongodb nullmail portage redis \
 		shoutcast tcpdump '_*'
 zstyle ':completion:*' single-ignored show
-
-autoload -Uz compinit; compinit -d ~/.zcompdump
 
 setopt COMPLETE_IN_WORD    # Complete from both ends of a word.
 setopt ALWAYS_TO_END       # Move cursor to the end of a completed word.

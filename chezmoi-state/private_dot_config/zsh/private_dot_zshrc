@@ -1,0 +1,29 @@
+function sourceFile () { [[ ! -f "$1" ]] || source "$1" }
+function loadConfig () { sourceFile "$ZSH_CONF/$1" }
+
+# make sure our extra completions directory exists
+[ -d "$ZSH_EXTRA_COMPLETIONS_DIR" ] || mkdir -p "$ZSH_EXTRA_COMPLETIONS_DIR"
+
+# prompt-configuration: keept it at the top
+loadConfig zsh-config/powerlevel10k.zsh
+loadConfig zsh-config/powerlevel10k-theme.zsh
+
+loadConfig "alias.zsh"
+loadConfig zsh-config/options.zsh # history-configuration and some extras
+loadConfig zsh-config/completions.zsh # configuration for Auto-Completion
+#loadConfig terminal-autotitle.zsh # change the terminal title based on the executed command
+loadConfig zsh-config/autosuggestions.zsh
+loadConfig zsh-config/syntax-highlighting.zsh
+loadConfig zsh-config/fzf.zsh
+loadConfig zsh-config/z.zsh
+
+# zim plugin manager - must be loaded very late
+loadConfig zsh-config/zim.zsh
+
+# because of a bug load fzf-tab config last
+loadConfig zsh-config/fzf-tab.zsh
+
+sourceFile "$HOME/.zlocal"
+
+unset -f sourceFile
+unset -f loadConfig
