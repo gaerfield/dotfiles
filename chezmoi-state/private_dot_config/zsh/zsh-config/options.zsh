@@ -8,7 +8,7 @@ export LESS='--tabs=4 --no-init --LONG-PROMPT --ignore-case --quit-if-one-screen
 # for example: https://github.com/Shougo/shougo-s-github/blob/64d1ff893c12439bb0bfdd30b7e48519f8b5711b/.zshrc
 
 # zsh history
-export HISTFILE=$ZSH_CACHE_DIR/.zhistory
+export HISTFILE=$ZSH_CACHE_DIR/history
 export HISTSIZE=10000
 export SAVEHIST=10000
 setopt inc_append_history        # save commands are added to the history immediately, otherwise only when shell exits.
