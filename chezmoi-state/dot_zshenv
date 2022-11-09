@@ -1,20 +1,21 @@
+# this file is sourced only once after boot
+# changes will have no immediate effect unluess: source ~/.zshenv
+
 # explicitely set XDG-Directories
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_LOCAL_HOME=$HOME/.local
 export XDG_PREFIX_HOME=$XDG_LOCAL_HOME
 export XDG_DATA_HOME=$XDG_LOCAL_HOME/share
+export XDG_STATE_HOME=$XDG_LOCAL_HOME/state
 export XDG_BIN_HOME=$XDG_LOCAL_HOME/bin
 export PATH=$XDG_BIN_HOME:$PATH
 
 # set zsh-config-home to XDG-Directory
-export ZDOTDIR=$XDG_CONFIG_HOME/zsh
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export HISTFILE="$XDG_DATA_HOME/zsh/history"
-export ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
-
-# set xdg-directory for installed software
-# https://wiki.archlinux.org/title/XDG_Base_Directory
-export SDKMAN_DIR="$XDG_DATA_HOME/sdkman"
+export ZSH_CACHE_DIR="$XDG_CACHE_HOME/zsh"
+export ZSH_EXTRA_COMPLETIONS_DIR="$ZSH_CACHE_DIR/completions"
 
 # xinit
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
