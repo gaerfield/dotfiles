@@ -1,7 +1,10 @@
 function sourceFile () { [[ ! -f "$1" ]] || source "$1" }
-function loadConfig () { sourceFile "$ZSH_CONF/$1" }
+function loadConfig () { sourceFile "$ZDOTDIR/$1" }
+
+sourceFile ~/.zshenv
 
 # make sure our extra completions directory exists
+ZSH_EXTRA_COMPLETIONS_DIR="$ZSH_CACHE_DIR/completions"
 [ -d "$ZSH_EXTRA_COMPLETIONS_DIR" ] || mkdir -p "$ZSH_EXTRA_COMPLETIONS_DIR"
 
 # prompt-configuration: keept it at the top
