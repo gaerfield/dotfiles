@@ -9,7 +9,7 @@ zmodule junegunn/fzf --fpath shell/completions.zsh --source shell/key-bindings.z
 # movement with "z"
 zmodule agkozak/zsh-z
 
-#zmodule joke/zim-chezmoi
+zmodule joke/zim-chezmoi
 
 zmodule $ZDOTDIR/local-modules/tealdeer
 zmodule $ZDOTDIR/local-modules/aqua
