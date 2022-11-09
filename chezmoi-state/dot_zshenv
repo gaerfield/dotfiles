@@ -10,6 +10,7 @@ export PATH=$XDG_BIN_HOME:$PATH
 # set zsh-config-home to XDG-Directory
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
 export HISTFILE="$XDG_DATA_HOME/zsh/history"
+export ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 
 # set xdg-directory for installed software
 # https://wiki.archlinux.org/title/XDG_Base_Directory

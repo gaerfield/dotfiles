@@ -18,11 +18,11 @@
 
   if [[ $USE_POWERLINE == false ]]; then
     # Use 8 colors and ASCII.
-    source "$ZSH_CONF/zsh-config/powerlevel10k-ascii-theme.zsh"
+    source "$ZDOTDIR/zsh-config/powerlevel10k-ascii-theme.zsh"
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=black,bold'
   else
     # Use 256 colors and UNICODE.
-    source "$ZSH_CONF/zsh-config/powerlevel10k-powerline-theme.zsh"
+    source "$ZDOTDIR/zsh-config/powerlevel10k-powerline-theme.zsh"
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
   fi
 }
