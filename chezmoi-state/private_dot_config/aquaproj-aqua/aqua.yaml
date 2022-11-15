@@ -30,3 +30,4 @@ packages:
 - name: derailed/k9s@v0.26.7
 - name: google/go-jsonnet@v0.19.1
 - name: jsonnet-bundler/jsonnet-bundler@v0.5.1
+- name: istio/istio/istioctl@1.14.5
