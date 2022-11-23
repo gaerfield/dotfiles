@@ -28,7 +28,9 @@ update() {
     sudo -- sh -c 'apt update && apt dist-upgrade -y && apt autoremove -y && fwupdmgr update'
   fi
   chezmoi update --refresh-externals
-  zinit update --all --parallel
+  zimfw uninstall
+  zimfw upgrade
+  zimfw update
   nvim +silent +PlugUpdate +PlugUpgrade +qa
 }
 alias port='netstat -tulpn | grep'
