@@ -34,3 +34,4 @@ setopt interactivecomments       # interactive commands
 setopt nocheckjobs               # Don't warn about running processes when exiting
 setopt rcexpandparam             # Array expension with parameters
 setopt autocd                    # if only directory path is entered, cd there.
+setopt noemacs                   # don't know what it's doing, but zargs won't echo errors anymore
