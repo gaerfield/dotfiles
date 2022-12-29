@@ -25,6 +25,7 @@
 # If none is provided, the default '%n@%m: %~' is used.
 #zstyle ':zim:termtitle' format '%1~'
 
+ZIM_CONFIG_FILE="$ZDOTDIR/zsh-config/zimfw.zsh"
 ZIM_HOME=${XDG_CACHE_HOME:-${HOME}}/zim
 # Download zimfw plugin manager if missing.
 if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
