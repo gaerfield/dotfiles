@@ -28,6 +28,9 @@ packages:
 - name: kubernetes/kubectl@v1.23.8
 - name: ahmetb/kubectx@v0.9.4
 - name: derailed/k9s@v0.26.7
+  #  registry: local
 - name: google/go-jsonnet@v0.19.1
 - name: jsonnet-bundler/jsonnet-bundler@v0.5.1
-- name: istio/istio/istioctl@1.14.5
+- name: istio/istio/istioctl@1.16.1
+- name: nektos/act@v0.2.35
+
