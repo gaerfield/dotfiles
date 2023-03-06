@@ -1,4 +1,5 @@
 (( ${+commands[gcloud]} )) && () {
-  local COMPLETIONS="$ZSH_EXTRA_COMPLETIONS_DIR/_gcloud"
-  [[ -e "$COMPLETIONS" ]] || ln -s /var/lib/snapd/snap/google-cloud-cli/current/completion.zsh.inc "$COMPLETIONS"
+  # gcloud uses non-standard completions: manually source it instead of adding it to fpath
+  # https://github.com/zimfw/zimfw/discussions/475
+  source /opt/google-cloud-sdk/completion.zsh.inc
 }
