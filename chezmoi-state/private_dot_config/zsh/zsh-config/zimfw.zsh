@@ -19,6 +19,7 @@ zmodule $ZDOTDIR/local-modules/github-cli
 zmodule $ZDOTDIR/local-modules/gcloud
 zmodule $ZDOTDIR/local-modules/vscodium
 zmodule $ZDOTDIR/local-modules/podman
+zmodule $ZDOTDIR/local-modules/git-extras
 
 # Prompt
 zmodule romkatv/powerlevel10k --use degit
@@ -38,4 +39,3 @@ zmodule Aloxaf/fzf-tab # after compinit but before syntax-highlighting and autos
 zmodule zsh-users/zsh-syntax-highlighting
 zmodule zsh-users/zsh-history-substring-search
 zmodule zsh-users/zsh-autosuggestions
-
