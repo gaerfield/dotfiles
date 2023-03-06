@@ -16,6 +16,9 @@ zmodule $ZDOTDIR/local-modules/aqua
 zmodule $ZDOTDIR/local-modules/direnv-hook
 zmodule $ZDOTDIR/local-modules/kubernetes
 zmodule $ZDOTDIR/local-modules/github-cli
+zmodule $ZDOTDIR/local-modules/gcloud
+zmodule $ZDOTDIR/local-modules/vscodium
+zmodule $ZDOTDIR/local-modules/podman
 
 # Prompt
 zmodule romkatv/powerlevel10k --use degit
