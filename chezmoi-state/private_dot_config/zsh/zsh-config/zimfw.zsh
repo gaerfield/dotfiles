@@ -20,6 +20,7 @@ zmodule $ZDOTDIR/local-modules/gcloud
 zmodule $ZDOTDIR/local-modules/vscodium
 zmodule $ZDOTDIR/local-modules/podman
 zmodule $ZDOTDIR/local-modules/git-extras
+zmodule $ZDOTDIR/local-modules/minikube
 
 # Prompt
 zmodule romkatv/powerlevel10k --use degit
