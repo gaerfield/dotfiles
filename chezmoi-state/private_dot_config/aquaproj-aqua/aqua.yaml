@@ -7,10 +7,7 @@
 #   require_checksum: true
 registries:
 - type: standard
-  ref: v3.73.0 # renovate: depName=aquaproj/aqua-registry
-- name: local
-  type: local
-  path: registry.yaml
+  ref: v3.147.0 # renovate: depName=aquaproj/aqua-registry
 packages:
 - name: junegunn/fzf@0.34.0
 - name: junegunn/fzf/fzf-tmux@0.34.0
@@ -22,16 +19,14 @@ packages:
 - name: jesseduffield/lazydocker@v0.19.0
 - name: jesseduffield/lazygit@v0.35
 - name: direnv/direnv@v2.32.1
-- name: dbrgn/tealdeer@v1.6.0
-  registry: local
+- name: dbrgn/tealdeer@v1.6.1
 - name: ahmetb/kubectx/kubens@v0.9.4
 - name: kubernetes/kubectl@v1.24.9
 - name: ahmetb/kubectx@v0.9.4
 - name: derailed/k9s@v0.27.3
-  registry: local
 - name: google/go-jsonnet@v0.19.1
 - name: jsonnet-bundler/jsonnet-bundler@v0.5.1
-- name: istio/istio/istioctl@1.16.1
+- name: istio/istio/istioctl@1.17.1
 - name: nektos/act@v0.2.35
 - name: buildpacks/pack@v0.28.0
 - name: tfutils/tfenv@v3.0.0
