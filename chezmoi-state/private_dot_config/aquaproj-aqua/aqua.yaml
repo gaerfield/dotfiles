@@ -26,7 +26,7 @@ packages:
 - name: derailed/k9s@v0.27.3
 - name: google/go-jsonnet@v0.19.1
 - name: jsonnet-bundler/jsonnet-bundler@v0.5.1
-- name: istio/istio/istioctl@1.17.1
+- name: istio/istio/istioctl@1.17.3
 - name: nektos/act@v0.2.35
 - name: buildpacks/pack@v0.28.0
 - name: tfutils/tfenv@v3.0.0
