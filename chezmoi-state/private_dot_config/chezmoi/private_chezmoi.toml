@@ -1,0 +1,11 @@
+[diff]
+    command = "nvim"
+    args = ["-d", "{{ .Destination }}", "{{ .Target }}"]
+
+[merge]
+    command = "nvim"
+    # destionantion=current home, source = current chezmoi, target = computed chezmoi
+    args = ["-d", "{{ .Destination }}", "{{ .Source }}", "{{ .Target }}"]
+
+[cd]
+    command = "/usr/bin/fish"
