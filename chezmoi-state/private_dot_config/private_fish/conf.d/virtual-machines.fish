@@ -1,0 +1,1 @@
+set -x LIBVIRT_DEFAULT_URI qemu:///session
