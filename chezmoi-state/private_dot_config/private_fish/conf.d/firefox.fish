@@ -1,0 +1,1 @@
+set -x MOZ_ENABLE_WAYLAND 1
