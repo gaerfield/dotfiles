@@ -7,6 +7,8 @@ abbr --add krestart kubectl rollout restart deployment
 abbr --add kctx kubectx
 abbr --add kns kubens
 
+abbr --add gcloud-ctx --set-cursor "gcloud config configurations activate payfree-%"
+
 if status is-interactive
     # tide customization - show right side kubectl/gcloud info only on specific commands
     set -gx tide_show_gcloud_on kubectl helm kubens kubectx stern gcloud
