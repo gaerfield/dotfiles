@@ -21,12 +21,13 @@ packages:
 - name: direnv/direnv@v2.32.1
 - name: dbrgn/tealdeer@v1.6.1
 - name: ahmetb/kubectx/kubens@v0.9.4
-- name: kubernetes/kubectl@v1.24.9
+- name: kubernetes/kubectl@v1.28.3
 - name: ahmetb/kubectx@v0.9.4
-- name: derailed/k9s@v0.27.3
+- name: derailed/k9s@v0.29.1
 - name: google/go-jsonnet@v0.19.1
 - name: jsonnet-bundler/jsonnet-bundler@v0.5.1
-- name: istio/istio/istioctl@1.17.3
+- name: istio/istio/istioctl@1.18.0
 - name: nektos/act@v0.2.35
 - name: buildpacks/pack@v0.28.0
 - name: tfutils/tfenv@v3.0.0
+- name: prometheus/prom2json@v1.3.3
