@@ -1,0 +1,9 @@
+[Unit]
+Description=Syncthing
+Requires=home.mount
+
+[Service]
+ExecStart=/usr/bin/syncthing
+
+[Install]
+WantedBy=default.target
