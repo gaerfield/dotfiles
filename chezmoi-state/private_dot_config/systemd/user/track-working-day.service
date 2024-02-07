@@ -1,0 +1,11 @@
+[Unit]
+Description=report date time on system booting up
+After=basic.target
+
+[Service]
+ExecStart=%h/.local/bin/track-working-day start
+Restart=always
+
+[Install]
+WantedBy=default.target
+

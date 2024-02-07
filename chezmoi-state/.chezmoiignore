@@ -1,0 +1,6 @@
+README.md
+{{- if ne .chezmoi.hostname "bms-cs21337" }}
+    # syncthing is only enabled on work-laptop
+    chezmoi-state/private_dot_config/systemd/user/syncthing.service
+    chezmoi-state/private_dot_config/systemd/user/default.target.wants/symlink_syncthing.service
+{{- end }}
