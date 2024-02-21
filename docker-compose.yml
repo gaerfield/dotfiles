@@ -4,10 +4,10 @@ services:
     build:
       context: .      
     image: shell
-    volumes:
+      #    volumes:
       #- ./bootstraps:/docker-entrypoint-initdb.d
-      - ./docker-entrypoint.sh:/usr/local/bin/docker-entrypoint.sh
-      - ./data:/home/payfree
+      # - ./docker-entrypoint.sh:/usr/local/bin/docker-entrypoint.sh
+      # - ./data:/home/payfree
 
 volumes:
   data:
