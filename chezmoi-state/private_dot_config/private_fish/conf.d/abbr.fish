@@ -32,3 +32,4 @@ abbr --add p wl-paste
 abbr --add scpr rsync -avz --info=progress2 --human-readable
 abbr --add netstat ss
 abbr --add tldr tealdeer
+
