@@ -8,20 +8,16 @@ sudo apt-get update \
     file \
     fontconfig \
     git \
-    highlight \
-    htop \
-    iputils-ping \
     jq \
-    nano \
     nmap \
     netcat-openbsd \
     rsync \
     sed \
     ssh \
-    sudo \
     tmux \
     tree \
     neovim \
+    watch \
     wget \
     fish \
   && sudo apt autoremove -y
