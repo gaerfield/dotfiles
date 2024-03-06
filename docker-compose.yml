@@ -2,12 +2,14 @@ version: '2'
 services:
   shell:
     build:
-      context: .      
+      context: .
+      args:
+        DOTFILE_FEATURE_TOGGLES: kubernetes gcloud some_stupid_stuff
     image: shell
+    stop_grace_period: 1s
       #    volumes:
+      #-  ./test.sh:/etc/environment
       #- ./bootstraps:/docker-entrypoint-initdb.d
       # - ./docker-entrypoint.sh:/usr/local/bin/docker-entrypoint.sh
       # - ./data:/home/payfree
 
-volumes:
-  data:
