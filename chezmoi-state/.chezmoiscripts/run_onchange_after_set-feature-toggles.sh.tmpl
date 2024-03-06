@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+
+# define which additional packages should be installed
+
+set_or_update(){
+  target_file="/etc/security/pam_env.conf"
+  environment_variable="$1"
+  value="$2"
+  grep --quiet "^$environment_variable" $target_file \
+      && sudo sed --in-place "s#^$environment_variable.*#$environment_variable $value#" $target_file \
+      || echo "$environment_variable $value" | sudo tee -a $target_file > /dev/null
+  export $environment_variable=$value
+}
+
+if [ -n "$DOTFILE_FEATURE_TOGGLES" ]; then
+    # use whatever is set in current environment 
+    #set_or_update 'DOTFILE_FEATURE_TOGGLES' "DEFAULT=$DOTFILE_FEATURE_TOGGLES"
+else
+    # fallback to automated detection of features
+    #set_or_update 'DOTFILE_FEATURE_TOGGLES' "DEFAULT={{ .features }}"
+fi
