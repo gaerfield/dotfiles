@@ -4,3 +4,4 @@ README.md
     chezmoi-state/private_dot_config/systemd/user/syncthing.service
     chezmoi-state/private_dot_config/systemd/user/default.target.wants/symlink_syncthing.service
 {{- end }}
+aqua.yaml
