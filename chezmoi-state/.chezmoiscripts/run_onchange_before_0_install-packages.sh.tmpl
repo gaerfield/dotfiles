@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-{{ if .chezmoi.osRealeas.idLike "debian" -}}
+{{ if .chezmoi.osRelease.idLike "debian" -}}
 sudo apt-get update \
   && sudo apt-get upgrade -y \
   && sudo apt-get install -y \
@@ -21,7 +21,7 @@ sudo apt-get update \
     watch \
     wget \
   && sudo apt autoremove -y
-{{ else if .chezmoi.osRealeas.idLike "arch" -}}
+{{ else if .chezmoi.osRelease.idLike "arch" -}}
 # procps-ng = watch, openssh 
 sudo pacman -S byobu \
     curl \
