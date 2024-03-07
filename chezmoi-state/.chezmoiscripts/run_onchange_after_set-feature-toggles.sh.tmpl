@@ -12,10 +12,10 @@ set_or_update(){
   export $environment_variable=$value
 }
 
-if [ -n "$DOTFILE_FEATURE_TOGGLES" ]; then
+#if [ -n "$DOTFILE_FEATURE_TOGGLES" ]; then
     # use whatever is set in current environment 
     #set_or_update 'DOTFILE_FEATURE_TOGGLES' "DEFAULT=$DOTFILE_FEATURE_TOGGLES"
-else
+#else
     # fallback to automated detection of features
     #set_or_update 'DOTFILE_FEATURE_TOGGLES' "DEFAULT=\{\{ .features \}\}"
-fi
+#fi
