@@ -17,5 +17,5 @@ if [ -n "$DOTFILE_FEATURE_TOGGLES" ]; then
     #set_or_update 'DOTFILE_FEATURE_TOGGLES' "DEFAULT=$DOTFILE_FEATURE_TOGGLES"
 else
     # fallback to automated detection of features
-    #set_or_update 'DOTFILE_FEATURE_TOGGLES' "DEFAULT={{ .features }}"
+    #set_or_update 'DOTFILE_FEATURE_TOGGLES' "DEFAULT=\{\{ .features \}\}"
 fi
