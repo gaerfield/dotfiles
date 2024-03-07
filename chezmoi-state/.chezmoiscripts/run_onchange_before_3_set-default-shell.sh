@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 # set users default shell to fish
-sudo usermod --shell /bin/fish user
+sudo usermod --shell /bin/fish $USER
