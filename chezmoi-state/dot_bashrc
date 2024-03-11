@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
-# jump into fish instead of bash
+# Fish seems to break systemd's emergency mode if set as the login shell
+# (source:  https://nixos.wiki/wiki/Fish#Setting_fish_as_your_shell). Therefore
+# set it as default only for interactive mode 
+# (https://wiki.archlinux.org/title/Fish#Modify_.bashrc_to_drop_into_fish).
+
 # use bash --norc to enter bash without executing evaluating bash.rc
 if [[ $(ps --no-header --pid=$PPID --format=comm) != "fish" && -z ${BASH_EXECUTION_STRING} ]]
 then
 	shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=''
 	exec fish $LOGIN_OPTION
 fi
-
-
