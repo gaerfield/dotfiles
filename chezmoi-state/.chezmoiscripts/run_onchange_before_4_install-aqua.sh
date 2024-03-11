@@ -8,4 +8,9 @@ echo "1577b99b74751a5ddeea757198cee3b600fce3ef18990540e4d0e667edcf1b5f  aqua-ins
 chmod +x aqua-installer
 ./aqua-installer
 rm ./aqua-installer
-#/home/user/.local/share/aquaproj-aqua/aqua install
+
+# first time installation - aqua.yaml is not yet in the correct path, explicitely define the location
+export PATH=${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH
+export AQUA_CONFIG="$HOME/.local/share/chezmoi/chezmoi-state/aqua.yaml"
+
+aqua install
