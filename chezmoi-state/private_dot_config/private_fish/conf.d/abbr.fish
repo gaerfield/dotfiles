@@ -7,7 +7,9 @@ abbr --add !!c "echo $history[1] | wl-copy"
 abbr --add opn xdg-open
 abbr --add fzf-help fzf_configure_bindings --help
 abbr --add df df -h
-abbr --add less bat
+if type -q bat
+    abbr --add less bat
+end
 abbr --add ip4 curl -sS4 ip.sb
 abbr --add ip6 curl -sS6 ip.sb
 abbr --add top btop
