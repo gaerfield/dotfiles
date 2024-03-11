@@ -6,6 +6,9 @@ if type -q kubectl
   set -x KUBECONFIG $XDG_CONFIG_HOME/kube/config
   abbr --add k kubectl
   abbr --add krestart kubectl rollout restart deployment
+  if status is-interactive
+    kubectl completion fish | source
+  end
 end
 
 if type -q gcloud
