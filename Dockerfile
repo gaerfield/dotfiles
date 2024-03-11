@@ -46,7 +46,7 @@ RUN mkdir -p ~/.local/bin && \
    # sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --apply gaerfield
    # sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init gaerfield && ~/.local/bin/chezmoi git -- checkout switch-to-zim && ~/.local/bin/chezmoi apply
    # uncomment if you want to use your local files to build the image
-   sh -c "$(curl -fsLS get.chezmoi.io/lb)" && ~/.local/bin/chezmoi init && ~/.local/bin/chezmoi apply \
+   sh -c "$(curl -fsLS get.chezmoi.io) -b ." && ./chezmoi init && ./chezmoi apply && rm ./chezmoi \
    && rm -rf ~/\$XDG_CACHE_HOME
 
 RUN mkdir /init/home-${PUSERNAME} && rsync -a ~/ /init/home-${PUSERNAME}/ && rm -rf ~/*
