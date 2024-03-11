@@ -10,6 +10,8 @@ set viewdir=$XDG_CACHE_HOME/nvim/view
 
 call plug#begin()
 
+" vim-sensible
+Plug 'tpope/vim-sensible'
 " lean Statusbar
 Plug 'vim-airline/vim-airline'
 " Airline Themes
