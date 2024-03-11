@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# jump into fish instead of bash
+# use bash --norc to enter bash without executing evaluating bash.rc
+if [[ $(ps --no-header --pid=$PPID --format=comm) != "fish" && -z ${BASH_EXECUTION_STRING} ]]
+then
+	shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=''
+	exec fish $LOGIN_OPTION
+fi
+
+
